@@ -8,19 +8,19 @@ export class AppConfig {
 
   public static get APIKEY():string {
     return 'AIzaSyBX4D2ABvJBlhKbjCE5vOF2PAr9fjDRp7I';
-  }
+  };
 
   public static get API_ENDPOINT():string {
     if (environment.production) {
-      return '//innsitec.com/atrapanieblas';
+      return location.protocol + '//innsitec.com/atrapanieblas';
     } else {
-      return 'http://innsitec.com/atrapanieblas';
+      return 'http://localhost:8000/api/';
     }
   };
 
   public static get API_VERSION():string {
-    return '/v1'
-  }
+    return ''
+  };
 
   public static get API_PUBLIC():string {
     return this.API_ENDPOINT + this.API_VERSION;

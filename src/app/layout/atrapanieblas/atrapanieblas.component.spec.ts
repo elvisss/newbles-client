@@ -2,11 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PageHeaderModule } from './../../shared';
-import { FormComponent } from './form.component';
+import { AtrapanieblasComponent } from './atrapanieblas.component';
 
 describe('FormComponent', () => {
-  let component: FormComponent;
-  let fixture: ComponentFixture<FormComponent>;
+  let component: AtrapanieblasComponent;
+  let fixture: ComponentFixture<AtrapanieblasComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,13 +14,13 @@ describe('FormComponent', () => {
       RouterTestingModule,
       PageHeaderModule,
     ],
-      declarations: [ FormComponent ]
+      declarations: [ AtrapanieblasComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormComponent);
+    fixture = TestBed.createComponent(AtrapanieblasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

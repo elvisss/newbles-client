@@ -8,6 +8,11 @@ import { Observable } from "rxjs/Observable";
 export class ApiService {
   constructor(private _http: Http) { }
 
+  getAtrapanieblas() {
+    return this._http.get(AppConfig.API_PUBLIC + 'atrapaniebla')
+      .map(res => res.json());
+  }
+
   // Utilities
 
   getParameters(data) {
