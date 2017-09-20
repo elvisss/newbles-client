@@ -1,27 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Atrapaniebla } from '../../model/atrapaniebla';
-import { ApiService } from '../../services/api.service';
+import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.service';
 
 @Component({
     selector: 'app-atrapanieblas',
     templateUrl: './atrapanieblas.component.html',
     styleUrls: ['./atrapanieblas.component.scss'],
     animations: [routerTransition()],
-    providers: [
-      ApiService
-    ]
 })
 export class AtrapanieblasComponent implements OnInit {
 
+    public atrapanieblas:Atrapaniebla[] = [];
+
     constructor(
-    	private _api: ApiService
+    	private _atrapanieblaService: AtrapanieblaService
     ) {}
 
     ngOnInit() {
-    	this._api.getAtrapanieblas()
+        this.atrapanieblas = [];
+    	this._atrapanieblaService.list()
     		.subscribe( res => {
-    			console.log(res)
+    			this.atrapanieblas = res.data;
     		});
     }
+
+    public refresh() {
+        this.ngOnInit();
+    }
+
 }

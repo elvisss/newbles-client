@@ -1,0 +1,61 @@
+<button class="btn btn-primary pull-right" (click)="open(content)"><i class="fa fa-plus"></i> Agregar Atrapaniebla</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Agregar Atrapaniebla</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+      <form (ngSubmit)="addAtrapaniebla()" #addAtrapanieblaForm="ngForm" novalidate>
+
+        <div class="form-group" [class.has-danger]="dispositivo.invalid && add_submitted">
+          <label class="form-control-label">Dispositivo</label>
+          <select [(ngModel)]="atrapaniebla.ID_DISPOSITIVO" required #dispositivo="ngModel" name="dispositivo" class="form-control">
+            <option>001</option>
+            <option>002</option>
+            <option>003</option>
+          </select>
+          <div *ngIf="dispositivo.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="ancho.invalid && add_submitted">
+          <label class="form-control-label">Ancho</label>
+          <input type="number" class="form-control" name="ancho" placeholder="" #ancho="ngModel" [(ngModel)]="atrapaniebla.ANCHO" required>
+          <div *ngIf="ancho.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="alto.invalid && add_submitted">
+          <label class="form-control-label">Alto</label>
+          <input type="number" class="form-control" name="alto" placeholder="" #alto="ngModel" [(ngModel)]="atrapaniebla.ALTO" required>
+          <div *ngIf="alto.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="humedad.invalid && add_submitted">
+          <label class="form-control-label">Humedad</label>
+          <input type="number" class="form-control" name="humedad" placeholder="" #humedad="ngModel" [(ngModel)]="atrapaniebla.HUMEDAD_PROMEDIO" required>
+          <div *ngIf="humedad.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="latitud.invalid && add_submitted">
+          <label class="form-control-label">Latitud</label>
+          <input type="number" class="form-control" name="latitud" placeholder="" #latitud="ngModel" [(ngModel)]="atrapaniebla.LATITUD" required>
+          <div *ngIf="latitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="longitud.invalid && add_submitted">
+          <label class="form-control-label">Longitud</label>
+          <input type="number" class="form-control" name="longitud" placeholder="" #longitud="ngModel" [(ngModel)]="atrapaniebla.LONGITUD" required>
+          <div *ngIf="longitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="c('Close click')">Cancelar</button>
+        <button type="button" class="btn btn-secondary" (click)="addAtrapaniebla(addAtrapanieblaForm)">Agregar</button>
+    </div>
+</ng-template>

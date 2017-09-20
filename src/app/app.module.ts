@@ -15,7 +15,8 @@ export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
-import { ApiService } from './services/api.service';
+import { AppConfig } from './app.config';
+import { ApiService } from './services/api/api.service';
 import { AuthenticationService } from './services/authentication.service';
 
 
@@ -38,6 +39,7 @@ import { AuthenticationService } from './services/authentication.service';
         })
     ],
     providers: [
+        AppConfig,
         AuthGuard,
         ApiService,
         AuthenticationService
