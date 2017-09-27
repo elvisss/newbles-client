@@ -17,8 +17,14 @@ export function HttpLoaderFactory(http: Http) {
 
 import { AppConfig } from './app.config';
 import { ApiService } from './services/api/api.service';
+import { MessagingService } from './services/messaging.service';
 import { AuthenticationService } from './services/authentication.service';
 
+import { AngularFireModule } from 'angularfire2';
+import * as firebase from 'firebase';
+firebase.initializeApp(firebaseConfig);
+
+import { firebaseConfig } from './../environments/firebase.config';
 
 @NgModule({
     declarations: [
@@ -36,12 +42,14 @@ import { AuthenticationService } from './services/authentication.service';
                 useFactory: HttpLoaderFactory,
                 deps: [Http]
             }
-        })
+        }),
+        AngularFireModule.initializeApp(firebaseConfig)
     ],
     providers: [
         AppConfig,
         AuthGuard,
         ApiService,
+        MessagingService,
         AuthenticationService
     ],
     bootstrap: [AppComponent]

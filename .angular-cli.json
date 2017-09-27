@@ -10,7 +10,9 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                ".htaccess"
+                ".htaccess",
+                "firebase-messaging-sw.js",
+                "manifest.json"
             ],
             "index": "index.html",
             "main": "main.ts",
