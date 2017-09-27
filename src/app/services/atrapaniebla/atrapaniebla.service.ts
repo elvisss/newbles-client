@@ -18,22 +18,22 @@ export class AtrapanieblaService {
     }
 
     public create(params: any = {}): Observable<any> {
-        // let para = {
-        //   ID_ATRAPANIEBLAS: 1,
-        //   ID_DISPOSITIVO: 1,
-        //   ID_TIPO_TANQUE: 1,
-        //   ID_TIPO_DISENIO: 1,
-        //   ID_TIPO_MALLA: 1,
-        //   ID_ESTADO_ATRAPANIEBLAS: 1,
-        //   OBSERVACION: 'obs',
-        //   ANCHO: params.ANCHO,
-        //   ALTO: params.ALTO,
-        //   LONGITUD: params.LONGITUD,
-        //   LATITUD: params.LATITUD,
-        //   HUMEDAD_PROMEDIO: params.HUMEDAD_PROMEDIO
-        // }
+        let para = {
+          ID_ATRAPANIEBLAS: 1,
+          ID_DISPOSITIVO: 1,
+          ID_TIPO_TANQUE: 1,
+          ID_TIPO_DISENIO: 1,
+          ID_TIPO_MALLA: 1,
+          ID_ESTADO_ATRAPANIEBLAS: 1,
+          OBSERVACION: 'obs',
+          ANCHO: params.ANCHO,
+          ALTO: params.ALTO,
+          LONGITUD: params.LONGITUD,
+          LATITUD: params.LATITUD,
+          HUMEDAD_PROMEDIO: params.HUMEDAD_PROMEDIO
+        }
         return this.apiService
-            .post<any>(this.apiService.endpoints.atrapaniebla.todo(), params);
+            .post<any>(this.apiService.endpoints.atrapaniebla.todo(), para);
     }
 
     public list(): Observable<any> {

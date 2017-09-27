@@ -12,9 +12,10 @@ export class AppConfig {
 
   public API_ENDPOINT():string {
     if (environment.production) {
-      return location.protocol + '//innsitec.com/atrapanieblas';
+      return 'http://newbles.innsitec.com';
     } else {
-      return 'http://localhost:8000';
+      return 'http://newbles.innsitec.com';
+      // return 'http://localhost:8000';
       // return 'http://192.168.43.253:8000';
     }
   };
