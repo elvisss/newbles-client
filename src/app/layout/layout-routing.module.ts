@@ -8,7 +8,8 @@ const routes: Routes = [
         children: [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'atrapanieblas', loadChildren: './atrapanieblas/atrapanieblas.module#AtrapanieblasModule' },
-            
+            { path: 'dispositivos', loadChildren: './dispositivos/dispositivos.module#DispositivosModule' },
+            { path: 'estadistica', loadChildren: './estadistica/estadistica.module#EstadisticaModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             // { path: 'atrapanieblas/crear', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },

@@ -1,0 +1,19 @@
+<button class="btn btn-sm btn-danger" (click)="open(content)"><i class="fa fa-close"></i> Eliminar</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Eliminar Dispositivo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+      <h2>¿Está seguro?</h2>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Eliminar</button>
+    </div>
+</ng-template>

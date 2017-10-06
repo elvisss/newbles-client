@@ -1,49 +1,39 @@
 import { Component, ViewChild, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Atrapaniebla } from '../../../../model/atrapaniebla';
-import { AtrapanieblaService } from '../../../../services/atrapaniebla/atrapaniebla.service';
+import { Dispositivo } from '../../../../model/dispositivo';
+import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
 
 @Component({
-    selector: 'app-modal',
+    selector: 'modal-add-dispositivo',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class ModalAddDispositivoComponent implements OnInit {
 
     @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
 
     closeResult: string;
 
-    public atrapaniebla: Atrapaniebla = <Atrapaniebla>{};
+    public dispositivo: Dispositivo = <Dispositivo>{};
     public add_submitted = false;
 
     private modalRef:  NgbModalRef;
 
     constructor(
         private modalService: NgbModal,
-        private _atrapanieblaService: AtrapanieblaService
+        private _dispositivoService: DispositivoService
     ) { }
 
     ngOnInit() {
-        // if (navigator.geolocation) {
-        //     navigator.geolocation.getCurrentPosition(position => {
-        //         console.log(position.coords)
-        //         this.atrapaniebla.LONGITUD = position.coords.longitude;
-        //         this.atrapaniebla.LATITUD = position.coords.latitude;
-        //     });
-        // }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+              console.log(position.coords)
+            });
+        }
     }
 
     open(content) {
-        this.atrapaniebla = <Atrapaniebla>{};
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                this.atrapaniebla.LONGITUD = position.coords.longitude;
-                this.atrapaniebla.LATITUD = position.coords.latitude;
-            });
-        }
-
+        this.dispositivo = <Dispositivo>{};
         this.modalRef = this.modalService.open(content);
         this.modalRef.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -52,15 +42,14 @@ export class ModalComponent implements OnInit {
         });
     }
 
-    addAtrapaniebla(form) {
+    add(form) {
       if (form.valid) {
-        this._atrapanieblaService.create(this.atrapaniebla)
+        this._dispositivoService.create(this.dispositivo)
           .subscribe(
             response => {
               this.modalRef.close();
               this.deleted.emit();
             }, error => {
-                this.modalRef.close();
                 console.log(error)
             }, () => {
                 this.modalRef.close();

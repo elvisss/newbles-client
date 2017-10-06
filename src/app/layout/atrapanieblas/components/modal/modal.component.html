@@ -39,16 +39,18 @@
           <div *ngIf="humedad.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
         </div>
 
-        <div class="form-group" [class.has-danger]="latitud.invalid && add_submitted">
-          <label class="form-control-label">Latitud</label>
-          <input type="number" class="form-control" name="latitud" placeholder="" #latitud="ngModel" [(ngModel)]="atrapaniebla.LATITUD" required>
-          <div *ngIf="latitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        <div class="form-group">
+          <label class="form-control-label">Latitud</label><br>
+          <label for="" class="col-form-label"><b>{{ atrapaniebla.LATITUD }}</b></label>
+          <!-- <input type="number" class="form-control" name="latitud" placeholder="" #latitud="ngModel" [(ngModel)]="atrapaniebla.LATITUD" required>
+          <div *ngIf="latitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div> -->
         </div>
 
-        <div class="form-group" [class.has-danger]="longitud.invalid && add_submitted">
-          <label class="form-control-label">Longitud</label>
-          <input type="number" class="form-control" name="longitud" placeholder="" #longitud="ngModel" [(ngModel)]="atrapaniebla.LONGITUD" required>
-          <div *ngIf="longitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        <div class="form-group">
+          <label class="form-control-label">Longitud</label><br>
+          <label for="" class="col-form-label"><b>{{ atrapaniebla.LONGITUD }}</b></label>
+          <!-- <input type="number" class="form-control" name="longitud" placeholder="" #longitud="ngModel" [(ngModel)]="atrapaniebla.LONGITUD" required>
+          <div *ngIf="longitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div> -->
         </div>
 
       </form>

@@ -6,6 +6,7 @@ export const endpoints = {
     dispositivo: {
         todo: () => `/dispositivo`,
         one: (idDispositivo: string) => `/dispositivo/${idDispositivo}`,
+        catacion: () => `/dispositivo_catacion_agua`,
     },
     auth: {
         login: () => `/login`

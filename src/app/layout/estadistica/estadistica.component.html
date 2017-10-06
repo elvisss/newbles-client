@@ -1,0 +1,70 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Estadística'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Lista de dispositivos ({{ dispositivos.length }})
+                </div>
+                <div class="card-block table-responsive">
+                    <table class="table table-hover table-striped" *ngIf="dispositivos.length > 0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Descripcion</th>
+                                <th>Fecha de creación</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dispositivo of dispositivos" [class.table-primary]="dispositivo.ID_DISPOSITIVO == selectedID">
+                                <td>{{ dispositivo.ID_DISPOSITIVO }}</td>
+                                <td>{{ dispositivo.DESCRIPCION }}</td>
+                                <td>{{ dispositivo.FECHA_CREACION | date:'medium' }}</td>
+                                <td>
+                                    <!-- <button class="btn btn-primary btn-sm" type="button" (click)="viewStats(dispositivo.ID_DISPOSITIVO)"> -->
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="randomize( dispositivo.ID_DISPOSITIVO )">
+                                        <i class="fa fa-bar-chart"></i> Ver
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-4">
+                            Gráfico
+                        </div>
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                    <i class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <div>
+                      <div style="display: block">
+                        <canvas baseChart
+                                [datasets]="barChartData"
+                                [labels]="barChartLabels"
+                                [options]="barChartOptions"
+                                [legend]="barChartLegend"
+                                [chartType]="barChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
