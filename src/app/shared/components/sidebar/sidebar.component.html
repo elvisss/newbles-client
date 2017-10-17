@@ -18,6 +18,20 @@
         <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-wrench"></i> Consultar Tiempo
         </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-cogs"></i> Mantenimiento</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/mantenimiento/bateria']">
+                            <span><i class="fa fa-battery"></i> Tipo de Bateria</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
         <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-th-list"></i> Cambiar Contraseña
         </a>

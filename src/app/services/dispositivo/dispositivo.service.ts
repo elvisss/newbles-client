@@ -24,8 +24,10 @@ export class DispositivoService {
           DESCRIPCION:'desc',
           NUMERO_PLACA:'123',
           VIDA_UTIL_MINIMA:1,
-          VIDA_UTIL_MAXIMA:2
+          VIDA_UTIL_MAXIMA:2,
+          USUARIO_CREACION:1,
         }
+        params.USUARIO_CREACION = 1;
         return this.apiService
             .post<any>(this.apiService.endpoints.dispositivo.todo(), params);
     }

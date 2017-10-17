@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -15,11 +16,17 @@ export class DashboardComponent implements OnInit {
     // public lat: number = -12.078342;
     // public lng: number = -76.922988;
 
-    // constructor() {
+    public markers:marker[] = [];
 
-    // }
+    constructor(
+      private atrapanieblaService: AtrapanieblaService) {
+    }
 
     ngOnInit() {
+      this.atrapanieblaService.googlemap()
+        .subscribe((res) => {
+          this.markers = res.data;
+        })
     }
 
     // public closeAlert(alert: any) {
@@ -51,32 +58,31 @@ export class DashboardComponent implements OnInit {
         console.log('dragEnd', m, $event);
       }
       
-      markers: marker[] = [
-          {
-              lat: -12.069907899999999,
-              lng: -76.9366739,
-              label: '001',
-              draggable: true
-          },
-          {
-              lat: -12.169907899999999,
-              lng: -76.5666739,
-              label: '002',
-              draggable: false
-          },
-          {
-              lat: -12.089907899999999,
-              lng: -76.4466739,
-              label: '003',
-              draggable: true
-          }
-      ]
+      // markers: marker[] = [
+      //     {
+      //         lat: -12.069907899999999,
+      //         lng: -76.9366739,
+      //         label: '001',
+      //         draggable: true
+      //     },
+      //     {
+      //         lat: -12.169907899999999,
+      //         lng: -76.5666739,
+      //         label: '002',
+      //         draggable: false
+      //     },
+      //     {
+      //         lat: -12.089907899999999,
+      //         lng: -76.4466739,
+      //         label: '003',
+      //         draggable: true
+      //     }
+      // ]
 
 }
 
 interface marker {
-    lat: number;
-    lng: number;
-    label?: string;
-    draggable: boolean;
+    ID_ATRAPANIEBLAS: number;
+    LATITUD: string;
+    LONGITUD: string;
 }

@@ -1,0 +1,14 @@
+export class Bateria {
+	ID_TIPO_BATERIA: number;
+	DESCRIPCION:string;
+	FECHA_COMPRA:string;
+	FECHA_CADUCIDAD:string;
+	VOLTAJE_MINIMO:number;
+	VOLTAJE_MAXIMO:number;
+	AMPERAJE:number;
+	USUARIO_CREACION:number;
+	FECHA_CREACION: string;
+	USUARIO_MODIFICACION:number;
+	FECHA_MODIFICACION:string;
+	ESTADO_REGISTRO:string;
+}

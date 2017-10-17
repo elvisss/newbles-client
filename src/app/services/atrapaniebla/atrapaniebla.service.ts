@@ -55,4 +55,10 @@ export class AtrapanieblaService {
         return this.apiService
             .delete(this.apiService.endpoints.atrapaniebla.one(id));
     }
+
+    public googlemap(): Observable<any> {
+      return this.apiService
+        .get<any>(this.apiService.endpoints.atrapaniebla.googlemap());
+    }
+
 }

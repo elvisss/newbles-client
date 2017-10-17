@@ -17,6 +17,8 @@ import { StatModule } from '../../shared';
 
 import { AgmCoreModule } from '@agm/core';
 
+import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.service';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -33,6 +35,9 @@ import { AgmCoreModule } from '@agm/core';
         TimelineComponent,
         NotificationComponent,
         ChatComponent
+    ],
+    providers: [
+        AtrapanieblaService
     ]
 })
 export class DashboardModule { }

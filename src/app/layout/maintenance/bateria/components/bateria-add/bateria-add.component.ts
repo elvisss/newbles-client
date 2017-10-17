@@ -1,27 +1,27 @@
 import { Component, ViewChild, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Dispositivo } from '../../../../model/dispositivo';
-import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
+import { Bateria } from '../../../../../model/bateria';
+import { BateriaService } from '../../../../../services/bateria/bateria.service';
 
 @Component({
-    selector: 'modal-add-dispositivo',
-    templateUrl: './modal.component.html',
-    styleUrls: ['./modal.component.scss']
+    selector: 'bateria-add',
+    templateUrl: './bateria-add.component.html',
+    styleUrls: ['./bateria-add.component.scss']
 })
-export class ModalAddDispositivoComponent implements OnInit {
+export class BateriaAddComponent implements OnInit {
 
     @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
 
     closeResult: string;
 
-    public dispositivo: Dispositivo = <Dispositivo>{};
+    public bateria: Bateria = <Bateria>{};
     public add_submitted = false;
 
     private modalRef:  NgbModalRef;
 
     constructor(
         private modalService: NgbModal,
-        private _dispositivoService: DispositivoService
+        private _bateriaService: BateriaService
     ) { }
 
     ngOnInit() {
@@ -33,7 +33,7 @@ export class ModalAddDispositivoComponent implements OnInit {
     }
 
     open(content) {
-        this.dispositivo = <Dispositivo>{};
+        this.bateria = <Bateria>{};
         this.modalRef = this.modalService.open(content);
         this.modalRef.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -44,7 +44,7 @@ export class ModalAddDispositivoComponent implements OnInit {
 
     add(form) {
       if (form.valid) {
-        this._dispositivoService.create(this.dispositivo)
+        this._bateriaService.create(this.bateria)
           .subscribe(
             response => {
               this.modalRef.close();

@@ -1,0 +1,45 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Baterias'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Lista ({{ baterias.length }}) <bateria-add (deleted)="refresh()"></bateria-add>
+                </div>
+                <div class="card-block table-responsive">
+                    <table class="table table-hover table-striped" *ngIf="baterias.length > 0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Descripción</th>
+                                <th>Fecha de compra</th>
+                                <th>Fecha de caducidad</th>
+                                <th>Voltaje</th>
+                                <th>Estado</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let bateria of baterias">
+                            <td>{{ bateria.ID_TIPO_BATERIA }}</td>
+                            <td>{{ bateria.DESCRIPCION  }}</td>
+                            <td>{{ bateria.FECHA_COMPRA  }}</td>
+                            <td>{{ bateria.FECHA_CADUCIDAD }}</td>
+                            <td>Min: {{ bateria.VOLTAJE_MINIMO  }} Max: {{ bateria.VOLTAJE_MAXIMO }}</td>
+                            <td [ngSwitch]="bateria.ESTADO_REGISTRO">
+                              <span *ngSwitchCase="'A'">Aprobado</span>
+                              <span *ngSwitchCase="'P'">Pendiente</span>
+                            </td>
+                            <td>
+                              <div class="btn-group">
+                                <!-- <bateria-delete [id]="bateria.ID_TIPO_BATERIA" (deleted)="refresh()"></bateria-delete> -->
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

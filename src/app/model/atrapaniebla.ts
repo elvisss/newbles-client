@@ -16,5 +16,5 @@ export class Atrapaniebla {
   FECHA_CREACION:string;
   USUARIO_MODIFICACION:number;
   FECHA_MODIFICACION:string;
-  ESTADO_REGISTRO:boolean;
+  ESTADO_REGISTRO:string;
 }

@@ -16,6 +16,7 @@
                                 <th>Humedad</th>
                                 <th>Latitud</th>
                                 <th>Longitud</th>
+                                <th>Estado</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -27,6 +28,10 @@
                             <td>{{ atrapaniebla.HUMEDAD_PROMEDIO | number: '1.2-2' }}</td>
                             <td>{{ atrapaniebla.LATITUD | number: '1.2-2'  }}</td>
                             <td>{{ atrapaniebla.LONGITUD | number: '1.2-2'  }}</td>
+                            <td [ngSwitch]="atrapaniebla.ESTADO_REGISTRO">
+                              <span *ngSwitchCase="'A'">Aprobado</span>
+                              <span *ngSwitchCase="'P'">Pendiente</span>
+                            </td>
                             <td>
                               <div class="btn-group">
                                 <app-delete-modal [id]="atrapaniebla.ID_ATRAPANIEBLAS" (deleted)="refresh()"></app-delete-modal>

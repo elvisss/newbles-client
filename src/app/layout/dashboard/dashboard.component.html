@@ -19,11 +19,9 @@
                       <agm-marker 
                           *ngFor="let m of markers; let i = index"
                           (markerClick)="clickedMarker(m.label, i)"
-                          [latitude]="m.lat"
-                          [longitude]="m.lng"
-                          [label]="m.label"
-                          [markerDraggable]="m.draggable"
-                          (dragEnd)="markerDragEnd(m, $event)">
+                          [latitude]="m.LATITUD"
+                          [longitude]="m.LONGITUD"
+                          [label]="m.ID_ATRAPANIEBLAS">
                           
                         <agm-info-window>
                           <strong>InfoWindow content</strong>
