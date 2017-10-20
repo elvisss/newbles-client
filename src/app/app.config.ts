@@ -16,6 +16,7 @@ export class AppConfig {
     } else {
       // return 'http://newbles.innsitec.com';
       return 'http://localhost:8000';
+      
       // return 'http://192.168.43.253:8000';
     }
   };
