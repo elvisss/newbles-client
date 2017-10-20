@@ -12,11 +12,7 @@ export class AppConfig {
 
   public API_ENDPOINT():string {
     if (environment.production) {
-<<<<<<< HEAD
       return location.protocol + '//newbles.innsitec.com';
-=======
-      return 'https://newbles.innsitec.com';
->>>>>>> 16a42f00d4063e8bbc4e5be2cf644853895eb24f
     } else {
       // return 'http://newbles.innsitec.com';
       return 'http://localhost:8000';
