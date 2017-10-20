@@ -1,0 +1,11 @@
+export class Servomotor {
+	ID_TIPO_SERVOMOTOR: number;
+	DESCRIPCION: string;
+	CAPACIDAD_MAXIMA: number;
+	CAPACIDAD_MINIMA: number;
+	USUARIO_CREACION: number;
+	FECHA_CREACION: string;
+	USUARIO_MODIFICACION: number;
+	FECHA_MODIFICACION: string;
+	ESTADO_REGISTRO: string;
+}
