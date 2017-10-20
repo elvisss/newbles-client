@@ -52,9 +52,9 @@ export class DispositivoService {
             .delete(this.apiService.endpoints.dispositivo.one(id));
     }
 
-    public listCatacion(): Observable<any> {
+    public listCatacion(id): Observable<any> {
         return this.apiService
-            .get<any>(this.apiService.endpoints.dispositivo.catacion());
+            .get<any>(this.apiService.endpoints.dispositivo.catacion(id));
     }
 
 }

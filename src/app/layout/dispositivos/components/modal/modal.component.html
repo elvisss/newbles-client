@@ -14,9 +14,9 @@
         <div class="form-group" [class.has-danger]="motor.invalid && add_submitted">
           <label class="form-control-label">Motor</label>
           <select [(ngModel)]="dispositivo.ID_TIPO_SERVOMOTOR" required #motor="ngModel" name="motor" class="form-control">
-            <option>001</option>
-            <option>002</option>
-            <option>003</option>
+            <option *ngFor='let servomotor of servomotors' [value]="servomotor.ID_TIPO_SERVOMOTOR">
+              {{servomotor.ID_TIPO_SERVOMOTOR}}
+            </option>
           </select>
           <div *ngIf="motor.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
         </div>
@@ -24,9 +24,9 @@
         <div class="form-group" [class.has-danger]="bateria.invalid && add_submitted">
           <label class="form-control-label">Batería</label>
           <select [(ngModel)]="dispositivo.ID_TIPO_BATERIA" required #bateria="ngModel" name="bateria" class="form-control">
-            <option>001</option>
-            <option>002</option>
-            <option>003</option>
+            <option *ngFor='let bateria of baterias' [value]="bateria.ID_TIPO_BATERIA">
+              {{bateria.ID_TIPO_BATERIA}}
+            </option>
           </select>
           <div *ngIf="bateria.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
         </div>

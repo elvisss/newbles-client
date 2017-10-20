@@ -3,6 +3,12 @@ import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-boot
 import { Dispositivo } from '../../../../model/dispositivo';
 import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
 
+import { Servomotor } from '../../../../model/servomotor';
+import { ServomotorService } from '../../../../services/servomotor/servomotor.service';
+
+import { Bateria } from '../../../../model/bateria';
+import { BateriaService } from '../../../../services/bateria/bateria.service';
+
 @Component({
     selector: 'modal-add-dispositivo',
     templateUrl: './modal.component.html',
@@ -19,17 +25,27 @@ export class ModalAddDispositivoComponent implements OnInit {
 
     private modalRef:  NgbModalRef;
 
+    public servomotors:Servomotor[] = [];
+    public baterias:Bateria[] = [];
+
     constructor(
         private modalService: NgbModal,
-        private _dispositivoService: DispositivoService
+        private _dispositivoService: DispositivoService,
+        private _servomotorService: ServomotorService,
+        private _bateriaService: BateriaService
     ) { }
 
     ngOnInit() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-              console.log(position.coords)
+        this.servomotors = [];
+        this._servomotorService.list()
+            .subscribe( res => {
+                this.servomotors = res.data;
             });
-        }
+        this.baterias = [];
+        this._bateriaService.list()
+            .subscribe( res => {
+                this.baterias = res.data;
+            });
     }
 
     open(content) {

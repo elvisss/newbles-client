@@ -19,7 +19,6 @@ export class AtrapanieblaService {
 
     public create(params: any = {}): Observable<any> {
         let para = {
-          ID_ATRAPANIEBLAS: 1,
           ID_DISPOSITIVO: 1,
           ID_TIPO_TANQUE: 1,
           ID_TIPO_DISENIO: 1,

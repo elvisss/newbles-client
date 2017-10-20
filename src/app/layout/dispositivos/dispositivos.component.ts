@@ -23,11 +23,6 @@ export class DispositivosComponent implements OnInit {
     		.subscribe( res => {
     			this.dispositivos = res.data;
     		});
-
-        this._dispositivoService.listCatacion()
-            .subscribe(res => {
-                console.log(res);
-            })
     }
 
     public refresh() {

@@ -7,7 +7,7 @@ export const endpoints = {
     dispositivo: {
         todo: () => `/dispositivo`,
         one: (idDispositivo: string) => `/dispositivo/${idDispositivo}`,
-        catacion: () => `/dispositivo_catacion_agua`,
+        catacion: (idDispositivo: string) => `/dispositivo_catacion_agua/${idDispositivo}`,
     },
     bateria: {
         todo: () => `/tipo_bateria`,

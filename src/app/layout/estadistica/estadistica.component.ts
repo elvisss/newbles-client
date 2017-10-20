@@ -23,7 +23,7 @@ export class EstadisticaComponent implements OnInit {
         this._dispositivoService.list()
             .subscribe( res => {
                 this.dispositivos = res.data;
-                this.randomize(this.dispositivos[0].ID_DISPOSITIVO)
+                this.selectDispositivo(this.dispositivos[0].ID_DISPOSITIVO);
             });
     }
 
@@ -34,7 +34,7 @@ export class EstadisticaComponent implements OnInit {
         responsive: true,
         scaleStartValue: 0
     };
-    public barChartLabels:string[] = ['01', '02', '03', '04', '05', '06'];
+    public barChartLabels:string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
     public barChartType:string = 'bar';
     public barChartLegend:boolean = true;
  
@@ -52,6 +52,16 @@ export class EstadisticaComponent implements OnInit {
     }
 
     public selectedID:number;
+
+    public selectDispositivo(id) {
+        let clone = [{data:[], label:''}];
+        this._dispositivoService.listCatacion(id)
+            .subscribe( res => {
+                clone[0].data = res.cantidad.split(',');
+                clone[0].label = 'Dispositivo ' + id;
+                this.barChartData = clone;
+            })
+    }
  
     public randomize(id):void {
         this.selectedID = id;

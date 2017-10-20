@@ -8,6 +8,7 @@ import { AtrapanieblasComponent } from './atrapanieblas.component';
 import { PageHeaderModule } from './../../shared';
 
 import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.service';
+import { DispositivoService } from '../../services/dispositivo/dispositivo.service';
 
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalDeleteComponent } from './components/modal_delete/modal.component';
@@ -26,7 +27,8 @@ import { ModalDeleteComponent } from './components/modal_delete/modal.component'
     	ModalDeleteComponent
     ],
     providers: [
-        AtrapanieblaService
+        AtrapanieblaService,
+        DispositivoService
     ]
 })
 export class AtrapanieblasModule { }

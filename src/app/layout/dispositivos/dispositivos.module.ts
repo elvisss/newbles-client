@@ -8,6 +8,8 @@ import { DispositivosComponent } from './dispositivos.component';
 import { PageHeaderModule } from './../../shared';
 
 import { DispositivoService } from '../../services/dispositivo/dispositivo.service';
+import { ServomotorService } from '../../services/servomotor/servomotor.service';
+import { BateriaService } from '../../services/bateria/bateria.service';
 
 import { ModalAddDispositivoComponent } from './components/modal/modal.component';
 import { ModalDeleteDispositivoComponent } from './components/modal_delete/modal.component';
@@ -26,7 +28,9 @@ import { ModalDeleteDispositivoComponent } from './components/modal_delete/modal
     	ModalDeleteDispositivoComponent
     ],
     providers: [
-        DispositivoService
+        DispositivoService,
+        ServomotorService,
+        BateriaService
     ]
 })
 export class DispositivosModule { }

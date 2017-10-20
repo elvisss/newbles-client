@@ -14,9 +14,9 @@
         <div class="form-group" [class.has-danger]="dispositivo.invalid && add_submitted">
           <label class="form-control-label">Dispositivo</label>
           <select [(ngModel)]="atrapaniebla.ID_DISPOSITIVO" required #dispositivo="ngModel" name="dispositivo" class="form-control">
-            <option>001</option>
-            <option>002</option>
-            <option>003</option>
+            <option *ngFor='let dispositivo of dispositivos' [value]="dispositivo.ID_DISPOSITIVO">
+              {{dispositivo.ID_DISPOSITIVO}}
+            </option>
           </select>
           <div *ngIf="dispositivo.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
         </div>

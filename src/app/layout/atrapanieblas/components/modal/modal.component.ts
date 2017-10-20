@@ -3,6 +3,9 @@ import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-boot
 import { Atrapaniebla } from '../../../../model/atrapaniebla';
 import { AtrapanieblaService } from '../../../../services/atrapaniebla/atrapaniebla.service';
 
+import { Dispositivo } from '../../../../model/dispositivo';
+import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
+
 @Component({
     selector: 'app-modal',
     templateUrl: './modal.component.html',
@@ -16,12 +19,14 @@ export class ModalComponent implements OnInit {
 
     public atrapaniebla: Atrapaniebla = <Atrapaniebla>{};
     public add_submitted = false;
+    public dispositivos:Dispositivo[] = [];
 
     private modalRef:  NgbModalRef;
 
     constructor(
         private modalService: NgbModal,
-        private _atrapanieblaService: AtrapanieblaService
+        private _atrapanieblaService: AtrapanieblaService,
+        private _dispositivoService: DispositivoService
     ) { }
 
     ngOnInit() {
@@ -32,6 +37,13 @@ export class ModalComponent implements OnInit {
         //         this.atrapaniebla.LATITUD = position.coords.latitude;
         //     });
         // }
+
+        this.dispositivos = [];
+        this._dispositivoService.list()
+            .subscribe( res => {
+                this.dispositivos = res.data;
+            });
+        
     }
 
     open(content) {

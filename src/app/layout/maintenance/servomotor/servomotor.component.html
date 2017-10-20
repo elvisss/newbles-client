@@ -19,7 +19,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let servomotor of servomotors">
-                                <td>{{ servomotor.ID_TIPO_servomotor }}</td>
+                                <td>{{ servomotor.ID_TIPO_SERVOMOTOR }}</td>
                                 <td>{{ servomotor.DESCRIPCION  }}</td>
                                 <td>Min: {{ servomotor.CAPACIDAD_MINIMA  }} Max: {{ servomotor.CAPACIDAD_MAXIMA }}</td>
                                 <td [ngSwitch]="servomotor.ESTADO_REGISTRO">
@@ -28,7 +28,7 @@
                                 </td>
                                 <td>
                                   <div class="btn-group">
-                                    <servomotor-delete [id]="bateria.ID_TIPO_BATERIA" (deleted)="refresh()"></servomotor-delete>
+                                    <servomotor-delete [id]="servomotor.ID_TIPO_SERVOMOTOR" (deleted)="refresh()"></servomotor-delete>
                                   </div>
                                 </td>
                             </tr>
