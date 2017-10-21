@@ -35,11 +35,14 @@ export class EstadisticaComponent implements OnInit {
         scaleStartValue: 0
     };
     public barChartLabels:string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
-    public barChartType:string = 'bar';
+    public barChartType:string = 'line';
     public barChartLegend:boolean = true;
  
     public barChartData:any[] = [
-        {data: [4, 2, 4, 0, 1, 9], label: 'Dispositivo 1'}
+        {data: [4, 2, 4, 1, 1, 9, 1], label: 'Dispositivo 1'},
+        {data: [1, 1, 4, 0, 3, 9], label: 'Dispositivo 2'},
+        {data: [2, 3, 6, 2, 1, 5], label: 'Dispositivo 3'},
+        {data: [3, 4, 8, 0, 1, 9], label: 'Dispositivo 4'}
     ];
  
     // events
