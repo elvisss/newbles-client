@@ -11,6 +11,7 @@ import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.se
 import { DispositivoService } from '../../services/dispositivo/dispositivo.service';
 
 import { ModalComponent } from './components/modal/modal.component';
+import { ModalUpdateComponent } from './components/modal_update/modal.component';
 import { ModalDeleteComponent } from './components/modal_delete/modal.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ModalDeleteComponent } from './components/modal_delete/modal.component'
     declarations: [
     	AtrapanieblasComponent,
     	ModalComponent,
+        ModalUpdateComponent,
     	ModalDeleteComponent
     ],
     providers: [

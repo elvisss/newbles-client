@@ -26,6 +26,7 @@
                             <td>
                               <div class="btn-group">
                                 <modal-delete-dispositivo [id]="dispositivo.ID_DISPOSITIVO" (deleted)="refresh()"></modal-delete-dispositivo>
+                                <modal-update-dispositivo [dispositivo]="dispositivo" (updated)="refresh()"></modal-update-dispositivo>
                               </div>
                             </td>
                           </tr>

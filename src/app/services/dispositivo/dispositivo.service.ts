@@ -42,9 +42,9 @@ export class DispositivoService {
             .get<any>(this.apiService.endpoints.dispositivo.one(id));
     }
 
-    public update(id): Observable<any> {
+    public update(dispositivo: Dispositivo): Observable<any> {
         return this.apiService
-            .put<any>(this.apiService.endpoints.dispositivo.one(id));
+            .put<any>(this.apiService.endpoints.dispositivo.one(dispositivo.ID_DISPOSITIVO), dispositivo);
     }
 
     public delete(id): Observable<any> {

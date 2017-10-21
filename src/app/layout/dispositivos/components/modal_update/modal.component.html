@@ -1,0 +1,65 @@
+<button class="btn btn-sm btn-info" (click)="open(content)"><i class="fa fa-plus"></i> Actualizar</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Actualizar Dispositivo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+      <form (ngSubmit)="update()" #updateForm="ngForm" novalidate>
+
+        <div class="form-group" [class.has-danger]="motor.invalid && add_submitted">
+          <label class="form-control-label">Motor</label>
+          <select [(ngModel)]="dispositivo.ID_TIPO_SERVOMOTOR" required #motor="ngModel" name="motor" class="form-control">
+            <option *ngFor='let servomotor of servomotors' [value]="servomotor.ID_TIPO_SERVOMOTOR">
+              {{servomotor.ID_TIPO_SERVOMOTOR}}
+            </option>
+          </select>
+          <div *ngIf="motor.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="bateria.invalid && add_submitted">
+          <label class="form-control-label">Batería</label>
+          <select [(ngModel)]="dispositivo.ID_TIPO_BATERIA" required #bateria="ngModel" name="bateria" class="form-control">
+            <option *ngFor='let bateria of baterias' [value]="bateria.ID_TIPO_BATERIA">
+              {{bateria.ID_TIPO_BATERIA}}
+            </option>
+          </select>
+          <div *ngIf="bateria.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="descripction.invalid && add_submitted">
+          <label class="form-control-label">Descripcion</label>
+          <input type="text" class="form-control" name="descripction" placeholder="" #descripction="ngModel" [(ngModel)]="dispositivo.DESCRIPCION" required>
+          <div *ngIf="descripction.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="placa.invalid && add_submitted">
+          <label class="form-control-label"># Placa</label>
+          <input type="text" class="form-control" name="placa" placeholder="" #placa="ngModel" [(ngModel)]="dispositivo.NUMERO_PLACA" required>
+          <div *ngIf="placa.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="util_minima.invalid && add_submitted">
+          <label class="form-control-label">Vida Útil Mínima</label>
+          <input type="number" class="form-control" name="util_minima" placeholder="" #util_minima="ngModel" [(ngModel)]="dispositivo.VIDA_UTIL_MINIMA" required>
+          <div *ngIf="util_minima.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+        <div class="form-group" [class.has-danger]="util_maxima.invalid && add_submitted">
+          <label class="form-control-label">Vida Útil Máxima</label>
+          <input type="number" class="form-control" name="util_maxima" placeholder="" #util_maxima="ngModel" [(ngModel)]="dispositivo.VIDA_UTIL_MAXIMA" required>
+          <div *ngIf="util_maxima.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="c('Close click')">Cancelar</button>
+        <button type="button" class="btn btn-secondary" (click)="update(updateForm)">Actualizar</button>
+    </div>
+</ng-template>

@@ -3,22 +3,23 @@ import { Http, Headers, Response } from '@angular/http';
 import { AppConfig } from "../app.config";
 import { ApiService } from "./api/api.service";
 import { Observable } from 'rxjs/Observable';
+import { User } from '../model/user';
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
   constructor(
     private http: Http,
-    private _api: ApiService,
+    private apiService: ApiService,
     private _config: AppConfig
   ) { }
 
-  login() {
-    return this.http.get(this._config.API_ENDPOINT())
-      .map((response: Response) => {
-        localStorage.setItem('isLoggedin', 'true');
-        return;
-      });
+  login(model: User) {
+    return this.apiService
+        .post<any>(this.apiService.endpoints.auth.login(), model)
+          .map((response: Response) => {
+            localStorage.setItem('isLoggedin', 'true');
+          });
   }
 
   // logout() {

@@ -35,6 +35,7 @@
                             <td>
                               <div class="btn-group">
                                 <app-delete-modal [id]="atrapaniebla.ID_ATRAPANIEBLAS" (deleted)="refresh()"></app-delete-modal>
+                                <update-modal [atrapaniebla]="atrapaniebla" (updated)="refresh()"></update-modal>
                                 <!-- <button type="button" class="btn btn-sm btn-info" (click)="tryEdit(deductible)">Editar</button> -->
                                 <!-- <button type="button" class="btn btn-sm btn-danger" (click)="id_atrapaniebla_delete = atrapaniebla.ID_ATRAPANIEBLAS; deleteModal.show();">Eliminar</button> -->
                               </div>

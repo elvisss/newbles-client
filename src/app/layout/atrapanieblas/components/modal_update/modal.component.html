@@ -1,15 +1,15 @@
-<button class="btn btn-primary pull-right" (click)="open(content)"><i class="fa fa-plus"></i> Agregar Atrapaniebla</button>
+<button class="btn btn-sm btn-info" (click)="open(content)"><i class="fa fa-plus"></i> Actualizar</button>
 
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">Agregar Atrapaniebla</h4>
+        <h4 class="modal-title">Actualizar Atrapaniebla</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
 
-      <form (ngSubmit)="addAtrapaniebla()" #addAtrapanieblaForm="ngForm" novalidate>
+      <form (ngSubmit)="updateAtrapaniebla()" #updateAtrapanieblaForm="ngForm" novalidate>
 
         <div class="form-group" [class.has-danger]="dispositivo.invalid && add_submitted">
           <label class="form-control-label">Dispositivo</label>
@@ -54,6 +54,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" (click)="c('Close click')">Cancelar</button>
-        <button type="button" class="btn btn-secondary" (click)="addAtrapaniebla(addAtrapanieblaForm)">Agregar</button>
+        <button type="button" class="btn btn-info" (click)="updateAtrapaniebla(updateAtrapanieblaForm)">Actualizar</button>
     </div>
 </ng-template>

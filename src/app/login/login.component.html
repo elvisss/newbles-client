@@ -3,17 +3,19 @@
         <div class="col-md-4 push-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>Newbles</h1>
-            <form role="form">
+            <form (ngSubmit)="addAtrapaniebla()" #addAtrapanieblaForm="ngForm">
                 <div class="form-content">
-                    <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Usuario">
+                    <div class="form-group" [class.has-danger]="user.invalid && add_submitted">
+                        <input type="text" class="form-control input-underline input-lg" name="user" placeholder="Usuario" #user="ngModel" [(ngModel)]="model.user" required>
+                        <div *ngIf="user.invalid && add_submitted" class="form-control-feedback">Ingrese su usario</div>
                     </div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Contraseña">
+                    <div class="form-group" [class.has-danger]="password.invalid && add_submitted">
+                        <input type="password" class="form-control input-underline input-lg" name="password" placeholder="Contraseña" #password="ngModel" [(ngModel)]="model.pass" required>
+                        <div *ngIf="password.invalid && add_submitted" class="form-control-feedback">Ingrese su contraseña</div>
                     </div>
                 </div>
-                <a class="btn rounded-btn" (click)="onLoggedin()"> Ingresar </a> &nbsp; <a class="btn rounded-btn" [routerLink]="['/signup']">Registrar</a>
+                <button [disabled]="user.invalid || password.invalid" type="submit" class="btn rounded-btn" (click)="onLoggedin()"> Ingresar </button> &nbsp; <a class="btn rounded-btn" [routerLink]="['/signup']">Registrar</a>
             </form>
         </div>
     </div>

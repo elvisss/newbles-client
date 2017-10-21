@@ -13,6 +13,7 @@ import { BateriaService } from '../../services/bateria/bateria.service';
 
 import { ModalAddDispositivoComponent } from './components/modal/modal.component';
 import { ModalDeleteDispositivoComponent } from './components/modal_delete/modal.component';
+import { ModalUpdateDispositivoComponent } from './components/modal_update/modal.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { ModalDeleteDispositivoComponent } from './components/modal_delete/modal
     declarations: [
     	DispositivosComponent,
     	ModalAddDispositivoComponent,
-    	ModalDeleteDispositivoComponent
+    	ModalDeleteDispositivoComponent,
+        ModalUpdateDispositivoComponent
     ],
     providers: [
         DispositivoService,

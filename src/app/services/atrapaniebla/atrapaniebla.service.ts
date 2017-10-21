@@ -45,9 +45,9 @@ export class AtrapanieblaService {
             .get<any>(this.apiService.endpoints.atrapaniebla.one(id));
     }
 
-    public update(id): Observable<any> {
+    public update(atrapaniebla: Atrapaniebla): Observable<any> {
         return this.apiService
-            .put<any>(this.apiService.endpoints.atrapaniebla.one(id));
+            .put<any>(this.apiService.endpoints.atrapaniebla.one(atrapaniebla.ID_ATRAPANIEBLAS), atrapaniebla);
     }
 
     public delete(id): Observable<any> {

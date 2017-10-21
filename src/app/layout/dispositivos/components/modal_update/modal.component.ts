@@ -1,0 +1,90 @@
+import { Component, ViewChild, EventEmitter, Output, Input, OnInit } from '@angular/core';
+import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Dispositivo } from '../../../../model/dispositivo';
+import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
+
+import { Servomotor } from '../../../../model/servomotor';
+import { ServomotorService } from '../../../../services/servomotor/servomotor.service';
+
+import { Bateria } from '../../../../model/bateria';
+import { BateriaService } from '../../../../services/bateria/bateria.service';
+
+@Component({
+    selector: 'modal-update-dispositivo',
+    templateUrl: './modal.component.html',
+    styleUrls: ['./modal.component.scss']
+})
+export class ModalUpdateDispositivoComponent implements OnInit {
+
+    @Input() dispositivo: Dispositivo;
+    @Output() updated: EventEmitter<void> = new EventEmitter<void>();
+
+    closeResult: string;
+
+    // public dispositivo: Dispositivo = <Dispositivo>{};
+    public add_submitted = false;
+
+    private modalRef:  NgbModalRef;
+
+    public servomotors:Servomotor[] = [];
+    public baterias:Bateria[] = [];
+
+    constructor(
+        private modalService: NgbModal,
+        private _dispositivoService: DispositivoService,
+        private _servomotorService: ServomotorService,
+        private _bateriaService: BateriaService
+    ) { }
+
+    ngOnInit() {
+        console.log(this.dispositivo)
+        this.servomotors = [];
+        this._servomotorService.list()
+            .subscribe( res => {
+                this.servomotors = res.data;
+            });
+        this.baterias = [];
+        this._bateriaService.list()
+            .subscribe( res => {
+                this.baterias = res.data;
+            });
+    }
+
+    open(content) {
+        // this.dispositivo = <Dispositivo>{};
+        this.modalRef = this.modalService.open(content);
+        this.modalRef.result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+    }
+
+    update(form) {
+      if (form.valid) {
+        this._dispositivoService.update(this.dispositivo)
+          .subscribe(
+            response => {
+              this.modalRef.close();
+              this.updated.emit();
+            }, error => {
+                this.modalRef.close();
+                console.log(error)
+            }, () => {
+                this.modalRef.close();
+            })
+      } else {
+        this.add_submitted = true;
+      }
+    }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return  `with: ${reason}`;
+        }
+    }
+}
