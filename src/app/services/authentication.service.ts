@@ -14,12 +14,15 @@ export class AuthenticationService {
     private _config: AppConfig
   ) { }
 
-  login(model: User) {
-    return this.apiService
-        .post<any>(this.apiService.endpoints.auth.login(), model)
-          .map((response: Response) => {
-            localStorage.setItem('isLoggedin', 'true');
-          });
+  login(model: User): Promise<string> {
+
+    if (model.user == 'admin') {
+      localStorage.setItem('currentUser', 'admin');
+    } else {
+      localStorage.setItem('currentUser', 'user');
+    }
+
+    return Promise.resolve(localStorage.getItem('currentUser'));
   }
 
   // logout() {

@@ -3,7 +3,7 @@
         <div class="col-md-4 push-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>Newbles Actualizado</h1>
-            <form (ngSubmit)="addAtrapaniebla()" #addAtrapanieblaForm="ngForm">
+            <form (ngSubmit)="onLoggedin()" #addAtrapanieblaForm="ngForm">
                 <div class="form-content">
                     <div class="form-group" [class.has-danger]="user.invalid && add_submitted">
                         <input type="text" class="form-control input-underline input-lg" name="user" placeholder="Usuario" #user="ngModel" [(ngModel)]="model.user" required>
@@ -15,7 +15,7 @@
                         <div *ngIf="password.invalid && add_submitted" class="form-control-feedback">Ingrese su contraseña</div>
                     </div>
                 </div>
-                <button [disabled]="user.invalid || password.invalid" type="submit" class="btn rounded-btn" (click)="onLoggedin()"> Ingresar </button> &nbsp; <a class="btn rounded-btn" [routerLink]="['/signup']">Registrar</a>
+                <button [disabled]="user.invalid || password.invalid" class="btn rounded-btn" type="submit"> Ingresar </button> &nbsp; <a class="btn rounded-btn" [routerLink]="['/signup']">Registrar</a>
             </form>
         </div>
     </div>

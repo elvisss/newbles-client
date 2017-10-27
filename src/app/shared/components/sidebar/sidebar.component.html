@@ -1,5 +1,5 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
-    <ul class="list-group">
+    <ul class="list-group" *ngIf="isUser">
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i> Principal
         </a>
@@ -55,8 +55,13 @@
         <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-th-list"></i> Cambiar Contraseña
         </a>
-        <!-- <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-file-o"></i> Salir
-        </a> -->
+    </ul>
+    <ul class="list-group" *ngIf="isAdmin">
+        <a routerLink="/admin/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Principal
+        </a>
+        <a routerLink="/admin/atrapanieblas" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Atrapanieblas
+        </a>
     </ul>
 </nav>

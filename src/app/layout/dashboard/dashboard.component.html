@@ -7,7 +7,6 @@
                 <div class="card-header">
                     <i class="fa fa-clock-o fa-fw"></i> Ubicación
                 </div>
-                <!-- /.card-header -->
                 <agm-map 
                       [latitude]="lat"
                       [longitude]="lng"
@@ -24,18 +23,13 @@
                           [label]="m.ID_ATRAPANIEBLAS">
                           
                         <agm-info-window>
-                          <strong>InfoWindow content</strong>
+                          <strong>{{ m.ID_ATRAPANIEBLAS }}</strong>
                         </agm-info-window>
                         
                       </agm-marker>
 
                     </agm-map>
-                <!-- <agm-map [latitude]="lat" [longitude]="lng">
-                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-                </agm-map> -->
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
         </div>
     </div>
 </div>

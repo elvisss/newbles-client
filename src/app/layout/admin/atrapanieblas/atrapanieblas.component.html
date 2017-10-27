@@ -1,10 +1,10 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Atrapanieblas'" [icon]="'fa-table'"></app-page-header>
+    <app-page-header [heading]="'Atrapanieblas Pendientes'" [icon]="'fa-table'"></app-page-header>
     <div class="row">
         <div class="col col-lg-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    Lista ({{ atrapanieblas.length }}) <app-modal (deleted)="refresh()"></app-modal>
+                    Lista ({{ atrapanieblas.length }})
                 </div>
                 <div class="card-block table-responsive">
                     <table class="table table-hover table-striped" *ngIf="atrapanieblas.length > 0">
@@ -34,8 +34,6 @@
                             </td>
                             <td>
                               <div class="btn-group">
-                                <app-delete-modal [id]="atrapaniebla.ID_ATRAPANIEBLAS" (deleted)="refresh()"></app-delete-modal>
-                                <update-modal [atrapaniebla]="atrapaniebla" (updated)="refresh()"></update-modal>
                                 <!-- <button type="button" class="btn btn-sm btn-info" (click)="tryEdit(deductible)">Editar</button> -->
                                 <!-- <button type="button" class="btn btn-sm btn-danger" (click)="id_atrapaniebla_delete = atrapaniebla.ID_ATRAPANIEBLAS; deleteModal.show();">Eliminar</button> -->
                               </div>

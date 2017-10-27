@@ -39,10 +39,10 @@ export class EstadisticaComponent implements OnInit {
     public barChartLegend:boolean = true;
  
     public barChartData:any[] = [
-        {data: [4, 2, 4, 1, 1, 9, 1], label: 'Dispositivo 1'},
-        {data: [1, 1, 4, 0, 3, 9], label: 'Dispositivo 2'},
-        {data: [2, 3, 6, 2, 1, 5], label: 'Dispositivo 3'},
-        {data: [3, 4, 8, 0, 1, 9], label: 'Dispositivo 4'}
+        {data: [4, 2, 4, 1, 1, 9, 1, 7], label: 'Dispositivo 1'},
+        // {data: [1, 1, 4, 0, 3, 9, 2, 8], label: 'Dispositivo 2'},
+        // {data: [2, 3, 6, 2, 1, 5, 3, 9], label: 'Dispositivo 3'},
+        // {data: [3, 4, 8, 0, 1, 9, 2, 6], label: 'Dispositivo 4'}
     ];
  
     // events
@@ -57,13 +57,14 @@ export class EstadisticaComponent implements OnInit {
     public selectedID:number;
 
     public selectDispositivo(id) {
-        let clone = [{data:[], label:''}];
-        this._dispositivoService.listCatacion(id)
-            .subscribe( res => {
-                clone[0].data = res.cantidad.split(',');
-                clone[0].label = 'Dispositivo ' + id;
-                this.barChartData = clone;
-            })
+        this.randomize(id);
+        // let clone = [{data:[], label:''}];
+        // this._dispositivoService.getCaptacion(id, '06', '2017')
+        //     .subscribe( res => {
+        //         clone[0].data = res.cantidad.split(',');
+        //         clone[0].label = 'Dispositivo ' + id;
+        //         this.barChartData = clone;
+        //     })
     }
  
     public randomize(id):void {

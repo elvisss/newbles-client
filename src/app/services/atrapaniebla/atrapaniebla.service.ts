@@ -60,4 +60,9 @@ export class AtrapanieblaService {
         .get<any>(this.apiService.endpoints.atrapaniebla.googlemap());
     }
 
+    public listPending(): Observable<any> {
+      return this.apiService
+        .get<any>(this.apiService.endpoints.atrapaniebla.listPending());
+    }
+
 }

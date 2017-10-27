@@ -26,12 +26,24 @@ export class LoginComponent implements OnInit {
 
     onLoggedin() {
         this._authenticationService.login(this.model)
-            .subscribe (
+            .then (
                 res => {
-                    this._router.navigate(['/dashboard']);
+                  switch(res) {
+                     case "admin": {
+                        this._router.navigate(['/admin/dashboard']);
+                        break;
+                     }
+                     case "user": {
+                        this._router.navigate(['/dashboard']);
+                        break;
+                     }
+                     default: {
+                        console.log('...')
+                        break;
+                     }
+                  }
                 }, error => {
-                    localStorage.setItem('isLoggedin', 'true');
-                    this._router.navigate(['/dashboard']);
+                    console.log(error)
                 }
             )
     }

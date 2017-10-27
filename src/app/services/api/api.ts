@@ -2,12 +2,13 @@ export const endpoints = {
     atrapaniebla: {
         todo: () => `/atrapaniebla`,
         one: (idAtrapaniebla: number) => `/atrapaniebla/${idAtrapaniebla}`,
+        listPending: () => `/atrapaniebla/listrar_pendientes`,
         googlemap: () => `/atrapaniebla_google_maps`,
     },
     dispositivo: {
         todo: () => `/dispositivo`,
         one: (idDispositivo: number) => `/dispositivo/${idDispositivo}`,
-        catacion: (idDispositivo: string) => `/dispositivo_catacion_agua/${idDispositivo}`,
+        captacion: (idDispositivo: string, month: string, year: string) => `/dispositivo_catacion_agua/${idDispositivo}/${month}/${year}`,
     },
     bateria: {
         todo: () => `/tipo_bateria`,
