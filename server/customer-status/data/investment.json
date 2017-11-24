@@ -1,0 +1,65 @@
+{
+    "dni": "44444444",
+    "journey": "GUIDED",
+    "id": "910a8964-3aba-4026-afea-4550fb74c76b",
+    "name": "Juda",
+    "profile": "ADVENTURER",
+    "goal": {
+        "goal": "OTHERS",
+        "other_goal": "other goal"
+    },
+    "preferences": {
+        "amount": 10000,
+        "currency": "USD",
+        "period": "YEAR",
+        "time": 3
+    },
+    "profiling": [{
+            "answer": "EXPERT",
+            "question": "KNOWLEDGE"
+        },
+        {
+            "answer": "PLAY_ADVENTURE",
+            "question": "PREFERENCE_BET"
+        },
+        {
+            "answer": "HIGH_RISK",
+            "question": "RISK"
+        },
+        {
+            "answer": "BUY",
+            "question": "PREFERENCE_BUY"
+        }
+    ],
+    "investment": {
+        "id": "1",
+        "plans": [{
+            "currency_type": "PEN",
+            "id": "adf0fcfe-5616-11e7-a79d-0242ac140004",
+            "name": "PLAN EL FIJO",
+            "products": [{
+                "amount": 0,
+                "commission": 0,
+                "currency_type": "USD",
+                "days": 0,
+                "expected_profitability_amount": 0,
+                "expected_profitability_amount_high": 0,
+                "expected_profitability_amount_low": 0,
+                "expected_profitability_amount_medium": 0,
+                "id": "9c8c6f15-5616-11e7-a79d-0242ac140004",
+                "name": "CORTO PLAZO DÓLARES",
+                "profitability_rate": 0,
+                "profitability_rate_high": 0,
+                "profitability_rate_low": 0,
+                "profitability_rate_medium": 0,
+                "proportion": 0,
+                "recommended": true,
+                "risk_type": "ALL",
+                "sub_products": [{}],
+                "type": "MUTUAL_FUND"
+            }],
+            "recommended": true,
+            "risk_type": "ALL"
+        }]
+    }
+}

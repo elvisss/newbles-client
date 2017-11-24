@@ -1,0 +1,21 @@
+{
+    "dni": "22222222",
+    "journey": "GUIDED",
+    "name": "Judah Solis",
+    "profile": "ADVENTURER",
+    "id": "910a8964-3aba-4026-afea-4550fb74c76b",
+    "goal": {
+        "goal": "OTHERS",
+        "other_goal": "other goal"
+    },
+    "profiling": [
+        {
+            "answer": "EXPERT",
+            "question": "KNOWLEDGE"
+        },
+        {
+            "answer": "HIGH_RISK",
+            "question": "RISK"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "success": true,
+    "response": {
+        "id": "1",
+        "amount": 10000,
+        "plans": [{
+            "id": "adb408c3-5616-11e7-a79d-0242ac140004",
+            "name": "PLAN CONSERVADOR",
+            "recommended": true,
+            "products": [{
+                "id": "9cbd9a72-5616-11e7-a79d-0242ac140004",
+                "name": "COMBO CONSERVADOR",
+                "type": "COMBO",
+                "commission": 0.008555,
+                "recommended": true,
+                "expected_profitability_amount_low": 12969.5417606331,
+                "expected_profitability_amount_medium": 12800.84544196357,
+                "expected_profitability_amount_high": 15436.33469109432,
+                "profitability_rate_low": 0.0263428548004463,
+                "profitability_rate_medium": 0.025,
+                "profitability_rate_high": 0.0443700736187793,
+                "currency_type": "USD",
+                "sub_products": [{
+                        "id": "9c8c6f15-5616-11e7-a79d-0242ac140004",
+                        "name": "CORTO PLAZO DÓLARES",
+                        "type": "MUTUAL_FUND",
+                        "commission": 0.00531,
+                        "amount": 5000,
+                        "proportion": 0.5,
+                        "currency_type": "USD"
+                    },
+                    {
+                        "id": "9ca0a83c-5616-11e7-a79d-0242ac140004",
+                        "name": "VISIÓN 1",
+                        "type": "MUTUAL_FUND",
+                        "commission": 0.0118,
+                        "amount": 5000,
+                        "proportion": 0.5,
+                        "currency_type": "USD"
+                    }
+                ]
+            }],
+            "currency_type": "USD",
+            "risk_type": "TOO_LOW_RISK"
+        }],
+        "time_unit": "YEAR",
+        "time_quantity": 10,
+        "currency": "USD",
+        "goal": "WEALTH"
+    },
+    "errors": []
+}

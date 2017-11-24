@@ -1,0 +1,667 @@
+{
+    "success": true,
+    "response": {
+        "name": "DEPÓSITO A PLAZO FIJO",
+        "type": "FIXED_DEPOSIT",
+        "penalties": [
+            {
+                "max_range_day": 60,
+                "penalty_days": 30
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "penalty_days": 45
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 360,
+                "penalty_days": 90
+            },
+            {
+                "min_range_day": 360,
+                "penalty_days": 180
+            }
+        ],
+        "documents": [
+            {
+                "type": "CONTRACT",
+                "name": "Contrato de Condiciones Generales",
+                "url": "https://inviertefacilbcp.com/assets/pdf/Contrato+de+Condiciones+Generales.pdf"
+            },
+            {
+                "type": "INFORMATIVE",
+                "name": "Cartilla de Informacion - Deposito a Plazo Fijo",
+                "url": "https://inviertefacilbcp.com/assets/pdf/Cartilla+de+Informacion+-+Deposito+a+Plazo+Fijo.pdf"
+            }
+        ],
+        "currency": "PEN",
+        "profitability_rates": [
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0372
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 0,
+                "max_range_day": 7,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0387
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 8,
+                "max_range_day": 15,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0397
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 16,
+                "max_range_day": 30,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0402
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 31,
+                "max_range_day": 60,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0407
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 61,
+                "max_range_day": 90,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0412
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0427
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0427
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0427
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.043
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.043
+            },
+            {
+                "min_range_day": 91,
+                "max_range_day": 120,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.043
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0417
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0432
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0432
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0432
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 121,
+                "max_range_day": 180,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0422
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0437
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0437
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0437
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0454
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0454
+            },
+            {
+                "min_range_day": 181,
+                "max_range_day": 270,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0454
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0427
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0442
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0465
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0465
+            },
+            {
+                "min_range_day": 271,
+                "max_range_day": 365,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0465
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0435
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.045
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.045
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.045
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 366,
+                "max_range_day": 545,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0447
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0462
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0462
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0462
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.0487
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.0487
+            },
+            {
+                "min_range_day": 546,
+                "max_range_day": 720,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.0487
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0454
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.05
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.05
+            },
+            {
+                "min_range_day": 721,
+                "max_range_day": 999,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.05
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 0,
+                "max_range_amount": 10000,
+                "profitability_rate": 0.0454
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 10000,
+                "max_range_amount": 100000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 100000,
+                "max_range_amount": 250000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 250000,
+                "max_range_amount": 500000,
+                "profitability_rate": 0.0476
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 500000,
+                "max_range_amount": 1000000,
+                "profitability_rate": 0.05
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 1000000,
+                "max_range_amount": 5000000,
+                "profitability_rate": 0.05
+            },
+            {
+                "min_range_day": 1000,
+                "max_range_day": 1100,
+                "min_range_amount": 5000000,
+                "profitability_rate": 0.05
+            }
+        ]
+    },
+    "errors": []
+}

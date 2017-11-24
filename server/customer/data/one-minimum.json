@@ -1,0 +1,32 @@
+{
+    "success": true,
+    "response": {
+        "id": "3",
+        "amount": 10000,
+        "plans": [{
+            "id": "3acdb74e-5692-11e7-8eab-0242ac140004",
+            "name": "PLAN AL TOQUE",
+            "recommended": false,
+            "products": [{
+                    "id": "26ea2bf8-5692-11e7-8eab-0242ac140004",
+                    "name": "DEPÓSITO A PLAZO FIJO",
+                    "type": "FIXED_DEPOSIT",
+                    "amount": 10000,
+                    "proportion": 1,
+                    "recommended": true,
+                    "currency_type": "USD",
+                    "profitability_rate": 0.007405,
+                    "expected_profitability_amount": 10040.303758902777,
+                    "days": 420
+                }
+            ],
+            "currency_type": "USD",
+            "risk_type": "ALL"
+        }],
+        "time_unit": "MONTH",
+        "time_quantity": 2,
+        "currency": "USD",
+        "goal": "MASTER"
+    },
+    "errors": []
+}
