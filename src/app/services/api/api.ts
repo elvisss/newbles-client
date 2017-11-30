@@ -4,6 +4,9 @@ export const endpoints = {
         one: (idAtrapaniebla: number) => `/atrapaniebla/${idAtrapaniebla}`,
         listPending: () => `/atrapaniebla/listrar_pendientes`,
         googlemap: () => `/atrapaniebla_google_maps`,
+        photo: () => `/atrapaniebla/foto_atrapanieblas`,
+        pending: () => `/atrapaniebla/listar_pendiente`,
+        status: (idAtrapaniebla: number) => `/atrapaniebla/estado_atrapanieblas/${idAtrapaniebla}`,
     },
     dispositivo: {
         todo: () => `/dispositivo`,

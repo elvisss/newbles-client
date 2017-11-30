@@ -4,7 +4,7 @@
         <div class="col col-lg-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    Lista ({{ atrapanieblas.length }}) <app-modal (deleted)="refresh()"></app-modal>
+                    Lista ({{ atrapanieblas.length }}) <app-modal [dispositivos]="dispositivos" (added)="showSwal($event)"></app-modal>
                 </div>
                 <div class="card-block table-responsive">
                     <table class="table table-hover table-striped" *ngIf="atrapanieblas.length > 0">
@@ -34,10 +34,9 @@
                             </td>
                             <td>
                               <div class="btn-group">
-                                <app-delete-modal [id]="atrapaniebla.ID_ATRAPANIEBLAS" (deleted)="refresh()"></app-delete-modal>
-                                <update-modal [atrapaniebla]="atrapaniebla" (updated)="refresh()"></update-modal>
-                                <!-- <button type="button" class="btn btn-sm btn-info" (click)="tryEdit(deductible)">Editar</button> -->
-                                <!-- <button type="button" class="btn btn-sm btn-danger" (click)="id_atrapaniebla_delete = atrapaniebla.ID_ATRAPANIEBLAS; deleteModal.show();">Eliminar</button> -->
+                                <app-delete-modal [atrapaniebla]="atrapaniebla" (deleted)="showSwal($event)"></app-delete-modal>
+                                <update-modal [dispositivos]="dispositivos" [atrapaniebla]="atrapaniebla" (updated)="showSwal($event)"></update-modal>
+                                <app-coords-modal [atrapaniebla]="atrapaniebla" (added)="showSwal($event)"></app-coords-modal>
                               </div>
                             </td>
                           </tr>
@@ -48,3 +47,10 @@
         </div>
     </div>
 </div>
+
+<swal 
+  #swal
+  title="Información"
+  text="{{ message }}"
+  type="info">
+</swal>

@@ -18,3 +18,11 @@ export class Atrapaniebla {
   FECHA_MODIFICACION:string;
   ESTADO_REGISTRO:string;
 }
+
+export const estadoAtrapaniebla = {
+    approve: 1,
+    pending_creation: 2,
+    pending_updating: 3,
+    pending_delete: 4,
+    pending_geo: 5
+};

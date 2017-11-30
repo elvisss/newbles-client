@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.atrapanieblaService.googlemap()
+      this.atrapanieblaService.list()
         .subscribe((res) => {
           for (let i = 0; i < res.data.length; i++) {
             res.data[i].LATITUD = parseFloat(res.data[i].LATITUD);

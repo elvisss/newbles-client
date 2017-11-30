@@ -1,45 +1,46 @@
-import { Component, ViewChild, EventEmitter, Output, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, OnInit } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
 import { Atrapaniebla, estadoAtrapaniebla } from '../../../../model/atrapaniebla';
 import { AtrapanieblaService } from '../../../../services/atrapaniebla/atrapaniebla.service';
-
-import { Dispositivo } from '../../../../model/dispositivo';
-import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
 
 import { SwalComponent } from '@toverux/ngx-sweetalert2';
 
 @Component({
-    selector: 'update-modal',
+    selector: 'app-coords-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss']
 })
-export class ModalUpdateComponent {
-
-    @Input() atrapaniebla: Atrapaniebla;
-    @Input() dispositivos: Dispositivo[];
-    @Output() updated: EventEmitter<string> = new EventEmitter<string>();
-
-    @ViewChild('coords') coords: SwalComponent;
-
-    public message = "La actualización está pendiente de revisión";
-    public file: any;
+export class ModalCoordsComponent implements OnInit {
 
     closeResult: string;
 
-    public add_submitted = false;
-    // public dispositivos:Dispositivo[] = [];
+    @Input() atrapaniebla: Atrapaniebla;
+    @Output() added: EventEmitter<string> = new EventEmitter<string>();
 
-    private modalRef:  NgbModalRef;
+    @ViewChild('coords') coords: SwalComponent;
+
+    public atrapanieblaEdit:Atrapaniebla = <Atrapaniebla>{};
+    private modalRef: NgbModalRef;
+    public file: any;
+
+    public message: string = "La actualización de georeferenciación está pendiente de revisión";
 
     constructor(
         private modalService: NgbModal,
-        private _atrapanieblaService: AtrapanieblaService,
-        private _dispositivoService: DispositivoService
+        private _atrapanieblaService: AtrapanieblaService
     ) { }
-    
+
+    ngOnInit() {
+        this.atrapanieblaEdit = Object.assign({}, this.atrapaniebla);
+        this.atrapanieblaEdit.ID_ESTADO_ATRAPANIEBLAS = estadoAtrapaniebla.pending_geo;
+    }
+
     open(content) {
 
-        this.atrapaniebla.ID_ESTADO_ATRAPANIEBLAS = estadoAtrapaniebla.pending_updating;
+        if (navigator.geolocation) {
+            this.coords.show()
+        }
 
         this.modalRef = this.modalService.open(content);
         this.modalRef.result.then((result) => {
@@ -49,22 +50,11 @@ export class ModalUpdateComponent {
         });
     }
 
-    updateAtrapaniebla(form) {
-      if (form.valid) {
-        this._atrapanieblaService.update(this.atrapaniebla)
-          .subscribe(
-            response => {
-              this.modalRef.close();
-              this.updated.emit(this.message);
-            }, error => {
-                this.modalRef.close();
-                console.log(error)
-            }, () => {
-                this.modalRef.close();
-            })
-      } else {
-        this.add_submitted = true;
-      }
+    loadCoords() {
+        navigator.geolocation.getCurrentPosition(position => {
+            this.atrapanieblaEdit.LONGITUD = position.coords.longitude;
+            this.atrapanieblaEdit.LATITUD = position.coords.latitude;
+        });
     }
 
     onChange(event) {
@@ -79,12 +69,27 @@ export class ModalUpdateComponent {
         }
     }
 
+    updateCoords() {
+
+        this._atrapanieblaService.update(this.atrapanieblaEdit)
+          .subscribe(
+            response => {
+              this.modalRef.close();
+              this.added.emit(this.message);
+            }, error => {
+                this.modalRef.close();
+                console.log(error)
+            }, () => {
+                this.modalRef.close();
+            })
+    }
+
     setImage() {
         this._atrapanieblaService.setPhoto(this.file)
           .subscribe(
             response => {
               this.modalRef.close();
-              this.updated.emit(this.message);
+              this.added.emit(this.message);
             }, error => {
             }, () => {
 

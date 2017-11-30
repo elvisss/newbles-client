@@ -1,4 +1,4 @@
-import { Component, ViewChild, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, ViewChild, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Dispositivo } from '../../../../model/dispositivo';
 import { DispositivoService } from '../../../../services/dispositivo/dispositivo.service';
@@ -16,7 +16,9 @@ import { BateriaService } from '../../../../services/bateria/bateria.service';
 })
 export class ModalAddDispositivoComponent implements OnInit {
 
-    @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
+    @Input() servomotors: Servomotor[];
+    @Input() baterias: Servomotor[];
+    @Output() added: EventEmitter<void> = new EventEmitter<void>();
 
     closeResult: string;
 
@@ -24,9 +26,6 @@ export class ModalAddDispositivoComponent implements OnInit {
     public add_submitted = false;
 
     private modalRef:  NgbModalRef;
-
-    public servomotors:Servomotor[] = [];
-    public baterias:Bateria[] = [];
 
     constructor(
         private modalService: NgbModal,
@@ -36,16 +35,7 @@ export class ModalAddDispositivoComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.servomotors = [];
-        this._servomotorService.list()
-            .subscribe( res => {
-                this.servomotors = res.data;
-            });
-        this.baterias = [];
-        this._bateriaService.list()
-            .subscribe( res => {
-                this.baterias = res.data;
-            });
+        
     }
 
     open(content) {
@@ -64,7 +54,7 @@ export class ModalAddDispositivoComponent implements OnInit {
           .subscribe(
             response => {
               this.modalRef.close();
-              this.deleted.emit();
+              this.added.emit();
             }, error => {
                 this.modalRef.close();
                 console.log(error)

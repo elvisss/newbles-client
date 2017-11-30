@@ -11,10 +11,13 @@ import { AtrapanieblasComponent } from './atrapanieblas/atrapanieblas.component'
 
 import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.service';
 
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 @NgModule({
     imports: [
         CommonModule,
         NgbDropdownModule.forRoot(),
+        SweetAlert2Module.forRoot(),
         AdminRoutingModule,
         TranslateModule,
         PageHeaderModule

@@ -1,0 +1,40 @@
+<button class="btn btn-sm btn-success" (click)="open(content)"><i class="fa fa-map-pin"></i> Georeferenciación</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Actualizar coordenadas</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <form (ngSubmit)="updateCoords()" #updateCoordsForm="ngForm" novalidate>
+            <div class="form-group">
+              <label class="form-control-label">Latitud</label><br>
+              <input type="number" class="form-control" name="latitud" placeholder="" #latitud="ngModel" [(ngModel)]="atrapanieblaEdit.LATITUD" required>
+              <div *ngIf="latitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Longitud</label><br>
+              <input type="number" class="form-control" name="longitud" placeholder="" #longitud="ngModel" [(ngModel)]="atrapanieblaEdit.LONGITUD" required>
+              <div *ngIf="longitud.invalid && add_submitted" class="form-control-feedback">Valor incorrecto</div>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+        <button type="button" class="btn btn-success" [disabled]="updateCoordsForm.invalid" (click)="updateCoords()">Establecer</button>
+    </div>
+</ng-template>
+
+<swal 
+  #coords
+  title="Información"
+  text="Quiere cargar las coordenadas de su dispositivo?"
+  type="question"
+  [showCancelButton]="true"
+  (confirm)="loadCoords()">
+</swal>

@@ -33,6 +33,8 @@ npm-debug.log
 testem.log
 /typings
 
+ts-node*
+
 # e2e
 /e2e/*.js
 /e2e/*.map

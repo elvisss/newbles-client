@@ -1,4 +1,4 @@
-import { Component, ViewChild, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, ViewChild, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Atrapaniebla } from '../../../../model/atrapaniebla';
 import { AtrapanieblaService } from '../../../../services/atrapaniebla/atrapaniebla.service';
@@ -13,13 +13,15 @@ import { DispositivoService } from '../../../../services/dispositivo/dispositivo
 })
 export class ModalComponent implements OnInit {
 
-    @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
+    @Input() dispositivos:Dispositivo[];
+    @Output() added: EventEmitter<string> = new EventEmitter<string>();
 
     closeResult: string;
 
     public atrapaniebla: Atrapaniebla = <Atrapaniebla>{};
     public add_submitted = false;
-    public dispositivos:Dispositivo[] = [];
+
+    public message: string = "La creación está pendiente de revisión";
 
     private modalRef:  NgbModalRef;
 
@@ -29,32 +31,10 @@ export class ModalComponent implements OnInit {
         private _dispositivoService: DispositivoService
     ) { }
 
-    ngOnInit() {
-        // if (navigator.geolocation) {
-        //     navigator.geolocation.getCurrentPosition(position => {
-        //         console.log(position.coords)
-        //         this.atrapaniebla.LONGITUD = position.coords.longitude;
-        //         this.atrapaniebla.LATITUD = position.coords.latitude;
-        //     });
-        // }
-
-        this.dispositivos = [];
-        this._dispositivoService.list()
-            .subscribe( res => {
-                this.dispositivos = res.data;
-            });
-        
-    }
+    ngOnInit() {}
 
     open(content) {
         this.atrapaniebla = <Atrapaniebla>{};
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                this.atrapaniebla.LONGITUD = position.coords.longitude;
-                this.atrapaniebla.LATITUD = position.coords.latitude;
-            });
-        }
 
         this.modalRef = this.modalService.open(content);
         this.modalRef.result.then((result) => {
@@ -70,7 +50,7 @@ export class ModalComponent implements OnInit {
           .subscribe(
             response => {
               this.modalRef.close();
-              this.deleted.emit();
+              this.added.emit(this.message);
             }, error => {
                 this.modalRef.close();
                 console.log(error)

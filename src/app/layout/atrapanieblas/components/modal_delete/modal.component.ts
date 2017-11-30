@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal,NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { AtrapanieblaService } from '../../../../services/atrapaniebla/atrapaniebla.service';
 
+import { Atrapaniebla, estadoAtrapaniebla } from '../../../../model/atrapaniebla';
+
 @Component({
     selector: 'app-delete-modal',
     templateUrl: './modal.component.html',
@@ -11,10 +13,12 @@ export class ModalDeleteComponent {
 
     closeResult: string;
 
-    @Input() id: number;
-    @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
+    @Input() atrapaniebla: Atrapaniebla;
+    @Output() deleted: EventEmitter<string> = new EventEmitter<string>();
 
     private modalRef:  NgbModalRef;
+
+    public message: string = "La eliminación está pendiente de revisión";
 
     constructor(
         private modalService: NgbModal,
@@ -22,6 +26,8 @@ export class ModalDeleteComponent {
     ) { }
 
     open(content) {
+        this.atrapaniebla.ID_ESTADO_ATRAPANIEBLAS = estadoAtrapaniebla.pending_delete;
+
         this.modalRef = this.modalService.open(content);
         this.modalRef.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -31,15 +37,25 @@ export class ModalDeleteComponent {
     }
 
     deleteAtrapaniebla() {
-        this._atrapanieblaService.delete(this.id)
+        this._atrapanieblaService.update(this.atrapaniebla)
           .subscribe(
             response => {
               this.modalRef.close();
-              this.deleted.emit();
+              this.deleted.emit(this.message);
             }, error => {
+                this.modalRef.close();
             }, () => {
-
+                this.modalRef.close();
             })
+        // this._atrapanieblaService.delete(this.id)
+        //   .subscribe(
+        //     response => {
+        //       this.modalRef.close();
+        //       this.deleted.emit(this.message);
+        //     }, error => {
+        //     }, () => {
+
+        //     })
     }
 
     private getDismissReason(reason: any): string {

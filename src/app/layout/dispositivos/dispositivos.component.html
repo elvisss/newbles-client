@@ -4,7 +4,7 @@
         <div class="col col-lg-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    Lista ({{ dispositivos.length }}) <modal-add-dispositivo (deleted)="refresh()"></modal-add-dispositivo>
+                    Lista ({{ dispositivos.length }}) <modal-add-dispositivo [servomotors]="servomotors" [baterias]="baterias" (added)="refresh()"></modal-add-dispositivo>
                 </div>
                 <div class="card-block table-responsive">
                     <table class="table table-hover table-striped" *ngIf="dispositivos.length > 0">
@@ -26,7 +26,7 @@
                             <td>
                               <div class="btn-group">
                                 <modal-delete-dispositivo [id]="dispositivo.ID_DISPOSITIVO" (deleted)="refresh()"></modal-delete-dispositivo>
-                                <modal-update-dispositivo [dispositivo]="dispositivo" (updated)="refresh()"></modal-update-dispositivo>
+                                <modal-update-dispositivo [servomotors]="servomotors" [baterias]="baterias" [dispositivo]="dispositivo" (updated)="refresh()"></modal-update-dispositivo>
                               </div>
                             </td>
                           </tr>

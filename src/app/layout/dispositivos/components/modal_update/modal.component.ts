@@ -17,6 +17,8 @@ import { BateriaService } from '../../../../services/bateria/bateria.service';
 export class ModalUpdateDispositivoComponent implements OnInit {
 
     @Input() dispositivo: Dispositivo;
+    @Input() servomotors: Servomotor[];
+    @Input() baterias: Servomotor[];
     @Output() updated: EventEmitter<void> = new EventEmitter<void>();
 
     closeResult: string;
@@ -26,9 +28,6 @@ export class ModalUpdateDispositivoComponent implements OnInit {
 
     private modalRef:  NgbModalRef;
 
-    public servomotors:Servomotor[] = [];
-    public baterias:Bateria[] = [];
-
     constructor(
         private modalService: NgbModal,
         private _dispositivoService: DispositivoService,
@@ -37,17 +36,7 @@ export class ModalUpdateDispositivoComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        console.log(this.dispositivo)
-        this.servomotors = [];
-        this._servomotorService.list()
-            .subscribe( res => {
-                this.servomotors = res.data;
-            });
-        this.baterias = [];
-        this._bateriaService.list()
-            .subscribe( res => {
-                this.baterias = res.data;
-            });
+        
     }
 
     open(content) {

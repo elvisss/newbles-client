@@ -3,20 +3,13 @@
     const bodyParser = require('body-parser');
     const app = express();
 
-    const adminModule = require('./admin/');
-    const adviserModule = require('./customer/adviser/');
     const authenticationModule = require('./authentication/');
     const configurationModule = require('./configuration/');
-    const customerModule = require('./customer/');
-    const customerStatusModule = require('./customer-status/');
-    const dashboardModule = require('./dashboard/');
-    const investmentProductModule = require('./investment-product/');
-    const productModule = require('./product/');
-    const purchaseModule = require('./purchase/');
-    const simulatorModule = require('./simulator/');
-    const surveyModule = require('./survey/');
 
     const atrapaniebla = require('./atrapaniebla/');
+    const dispositivo = require('./dispositivo/');
+    const servomotor = require('./servomotor/');
+    const bateria = require('./bateria/');
 
     const globals = require('./global');
     const prefix = '/api';
@@ -32,7 +25,7 @@
 
     app.use(bodyParser.json());
     app.use((req, res, next) => {
-        const allowedOrigins = ['http://localhost:3000', 'http://localhost:4200'];
+        const allowedOrigins = ['http://localhost:3000', 'http://localhost:4200', 'http://localhost:4201'];
         const origin = req.headers.origin;
         if (allowedOrigins.indexOf(origin) > -1) {
             res.setHeader('Access-Control-Allow-Origin', origin);
@@ -45,20 +38,13 @@
 
     app.all('*', (req, res, next) => setTimeout(() => next(), 0));
 
-    app.use(prefix, adminModule);
-    app.use(prefix, adviserModule);
     app.use(prefix, authenticationModule);
     app.use(prefix, configurationModule);
-    app.use(prefix, customerModule);
-    app.use(prefix, customerStatusModule);
-    app.use(prefix, dashboardModule);
-    app.use(prefix, investmentProductModule);
-    app.use(prefix, productModule);
-    app.use(prefix, purchaseModule);
-    app.use(prefix, simulatorModule);
-    app.use(prefix, surveyModule);
 
     app.use(prefix, atrapaniebla);
+    app.use(prefix, dispositivo);
+    app.use(prefix, servomotor);
+    app.use(prefix, bateria);
 
     app.get('/', (req, res) => {
         res.send({

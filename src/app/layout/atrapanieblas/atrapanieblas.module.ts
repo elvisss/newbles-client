@@ -13,6 +13,9 @@ import { DispositivoService } from '../../services/dispositivo/dispositivo.servi
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalUpdateComponent } from './components/modal_update/modal.component';
 import { ModalDeleteComponent } from './components/modal_delete/modal.component';
+import { ModalCoordsComponent } from './components/modal_coords/modal.component';
+
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 @NgModule({
     imports: [
@@ -20,13 +23,15 @@ import { ModalDeleteComponent } from './components/modal_delete/modal.component'
         AtrapanieblasRoutingModule,
         PageHeaderModule,
         FormsModule,
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
+        SweetAlert2Module.forRoot(),
     ],
     declarations: [
     	AtrapanieblasComponent,
     	ModalComponent,
         ModalUpdateComponent,
-    	ModalDeleteComponent
+    	ModalDeleteComponent,
+        ModalCoordsComponent
     ],
     providers: [
         AtrapanieblaService,

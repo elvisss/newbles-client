@@ -2,11 +2,11 @@
   "data": [
     {
       "ID_ATRAPANIEBLAS": 1,
-      "ID_DISPOSITIVO": 13,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 2,
       "ANCHO": "123.00",
       "ALTO": "123.00",
       "LONGITUD": "-76.9366739",
@@ -18,15 +18,15 @@
       "FECHA_CREACION": null,
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 23,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 3,
       "ANCHO": "45678.00",
       "ALTO": "65487.00",
       "LONGITUD": "-76.5666739",
@@ -38,15 +38,15 @@
       "FECHA_CREACION": "2017-09-14 20:16:56",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 24,
-      "ID_DISPOSITIVO": 7,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 2,
       "ANCHO": "45678.00",
       "ALTO": "65487.00",
       "LONGITUD": "-76.4466739",
@@ -58,15 +58,15 @@
       "FECHA_CREACION": "2017-09-14 20:17:37",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 25,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 5,
       "ANCHO": "45678.00",
       "ALTO": "65487.00",
       "LONGITUD": "-76.5466739",
@@ -78,15 +78,15 @@
       "FECHA_CREACION": "2017-09-14 20:26:10",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 28,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 4,
       "ANCHO": "12.00",
       "ALTO": "1.00",
       "LONGITUD": "-76.4576739",
@@ -98,15 +98,15 @@
       "FECHA_CREACION": null,
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 53,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 2,
+      "ID_ESTADO_ATRAPANIEBLAS": 4,
       "ANCHO": "7.00",
       "ALTO": "7.00",
       "LONGITUD": null,
@@ -118,15 +118,15 @@
       "FECHA_CREACION": "2017-10-21 00:24:03",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 54,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 2,
       "ANCHO": "123.00",
       "ALTO": "3224.00",
       "LONGITUD": "-76.9366978",
@@ -138,15 +138,15 @@
       "FECHA_CREACION": "2017-10-27 20:54:05",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     },
     {
       "ID_ATRAPANIEBLAS": 55,
-      "ID_DISPOSITIVO": 11,
+      "ID_DISPOSITIVO": 1,
       "ID_TIPO_TANQUE": 1,
       "ID_TIPO_DISENIO": 1,
       "ID_TIPO_MALLA": 1,
-      "ID_ESTADO_ATRAPANIEBLAS": 1,
+      "ID_ESTADO_ATRAPANIEBLAS": 4,
       "ANCHO": "10.00",
       "ALTO": "10.00",
       "LONGITUD": "-76.9067041",
@@ -158,7 +158,7 @@
       "FECHA_CREACION": "2017-10-27 21:11:07",
       "USUARIO_MODIFICACION": null,
       "FECHA_MODIFICACION": null,
-      "ESTADO_REGISTRO": "A"
+      "ESTADO_REGISTRO": "P"
     }
   ]
 }

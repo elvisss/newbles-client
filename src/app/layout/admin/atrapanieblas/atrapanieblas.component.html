@@ -28,14 +28,16 @@
                             <td>{{ atrapaniebla.HUMEDAD_PROMEDIO | number: '1.2-2' }}</td>
                             <td>{{ atrapaniebla.LATITUD | number: '1.2-10'  }}</td>
                             <td>{{ atrapaniebla.LONGITUD | number: '1.2-10'  }}</td>
-                            <td [ngSwitch]="atrapaniebla.ESTADO_REGISTRO">
-                              <span *ngSwitchCase="'A'">Aprobado</span>
-                              <span *ngSwitchCase="'P'">Pendiente</span>
+                            <td [ngSwitch]="atrapaniebla.ID_ESTADO_ATRAPANIEBLAS">
+                              <span *ngSwitchCase="1">Aprobado</span>
+                              <span *ngSwitchCase="2">Pendiente de Aprobacion de Creacion</span>
+                              <span *ngSwitchCase="3">Pendiente de Aprobacion de Actualizacion</span>
+                              <span *ngSwitchCase="4">Pendiente de Aprobacion de Eliminacion</span>
+                              <span *ngSwitchCase="5">Pendiente de Aprobacion de Geolocalizacion</span>
                             </td>
                             <td>
-                              <div class="btn-group">
-                                <!-- <button type="button" class="btn btn-sm btn-info" (click)="tryEdit(deductible)">Editar</button> -->
-                                <!-- <button type="button" class="btn btn-sm btn-danger" (click)="id_atrapaniebla_delete = atrapaniebla.ID_ATRAPANIEBLAS; deleteModal.show();">Eliminar</button> -->
+                              <div class="btn-group" *ngIf="atrapaniebla.ID_ESTADO_ATRAPANIEBLAS != 1">
+                                <button type="button" class="btn btn-info" (click)="tryApprove(atrapaniebla)">Aprobar</button>
                               </div>
                             </td>
                           </tr>
@@ -46,3 +48,19 @@
         </div>
     </div>
 </div>
+
+<swal 
+  #swalApprove
+  title="Aprobación"
+  text="Confirmar aprobación de atrapaniebla"
+  type="question"
+  [showCancelButton]="true"
+  (confirm)="approve()">
+</swal>
+
+<swal 
+  #swalConfirmation
+  title="Confirmación"
+  text="Aprobación exitosa"
+  type="success">
+</swal>

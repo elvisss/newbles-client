@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "ID_DISPOSITIVO": 7,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "12",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 12,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-11-18 01:10:00",
+      "USUARIO_MODIFICACION": 1,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 8,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "1234",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 12,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-09-10 06:26:37",
+      "USUARIO_MODIFICACION": 1,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 11,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "nueva",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 123,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-10-21 00:54:16",
+      "USUARIO_MODIFICACION": 1,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 12,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "Hola mundo",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 12,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-09-10 07:02:18",
+      "USUARIO_MODIFICACION": null,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 13,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "Hola mundo desde el validador",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 12,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-09-10 07:02:50",
+      "USUARIO_MODIFICACION": null,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 14,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "Hola mundo desde el validador",
+      "NUMERO_PLACA": "4132",
+      "VIDA_UTIL_MINIMA": 12,
+      "VIDA_UTIL_MAXIMA": 21,
+      "USUARIO_CREACION": 1,
+      "FECHA_CREACION": "2017-09-10 07:04:49",
+      "USUARIO_MODIFICACION": null,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    },
+    {
+      "ID_DISPOSITIVO": 15,
+      "ID_TIPO_SERVOMOTOR": 1,
+      "ID_TIPO_BATERIA": 1,
+      "DESCRIPCION": "desc",
+      "NUMERO_PLACA": "123",
+      "VIDA_UTIL_MINIMA": 1,
+      "VIDA_UTIL_MAXIMA": 2,
+      "USUARIO_CREACION": null,
+      "FECHA_CREACION": "2017-10-06 16:54:37",
+      "USUARIO_MODIFICACION": null,
+      "FECHA_MODIFICACION": null,
+      "ESTADO_REGISTRO": "A"
+    }
+  ]
+}
