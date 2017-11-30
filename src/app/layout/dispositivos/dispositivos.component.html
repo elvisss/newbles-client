@@ -4,7 +4,9 @@
         <div class="col col-lg-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    Lista ({{ dispositivos.length }}) <modal-add-dispositivo [servomotors]="servomotors" [baterias]="baterias" (added)="refresh()"></modal-add-dispositivo>
+                    Lista ({{ dispositivos.length }})
+                    <modal-add-dispositivo [servomotors]="servomotors" [baterias]="baterias" (added)="refresh()"></modal-add-dispositivo>
+                    <a class="btn btn-secondary pull-right" download href="/assets/data/dispositivos.csv"><i class="fa fa-download"></i> Descargar CSV</a>
                 </div>
                 <div class="card-block table-responsive">
                     <table class="table table-hover table-striped" *ngIf="dispositivos.length > 0">
@@ -14,6 +16,7 @@
                                 <th>Descripcion</th>
                                 <th># Placa</th>
                                 <th>Fecha de creación</th>
+                                <th>Estado</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -23,6 +26,10 @@
                             <td>{{ dispositivo.DESCRIPCION }}</td>
                             <td>{{ dispositivo.NUMERO_PLACA }}</td>
                             <td>{{ dispositivo.FECHA_CREACION | date:'medium' }}</td>
+                            <td [ngSwitch]="dispositivo.ESTADO_REGISTRO">
+                              <span *ngSwitchCase="'A'">Activo</span>
+                              <span *ngSwitchCase="'P'">Pendiente</span>
+                            </td>
                             <td>
                               <div class="btn-group">
                                 <modal-delete-dispositivo [id]="dispositivo.ID_DISPOSITIVO" (deleted)="refresh()"></modal-delete-dispositivo>
