@@ -47,6 +47,11 @@ export class ApiService {
         return response.json();
     }
 
+    public registerHeader_() {
+        this.headers.delete('X-TOKEN');
+        this.headers.append('X-TOKEN', 'n7e4mdm5gpJLrT52RWqX+bgXw80');
+    }
+
     private handlerError(errorInfo: any): Observable<any> {
         let error: { errors?: any; response?: any; } = {
             errors: []
@@ -86,6 +91,7 @@ export class ApiService {
                 this.registerHeader(header, config.headers[header]);
             }
         }
+        this.registerHeader_();
         const headers = this.headers;
         return this.http
             .post(this.createUrl(url), data, { headers })

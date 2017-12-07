@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 
 import { User } from '../model/user';
 
 import { AuthenticationService } from '../services/authentication.service';
+
+import { SwalComponent } from '@toverux/ngx-sweetalert2';
+
 
 @Component({
     selector: 'app-login',
@@ -14,6 +17,7 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+    @ViewChild('login') private login: SwalComponent;
     public model: User = <User>{};
 
     constructor(
@@ -26,14 +30,17 @@ export class LoginComponent implements OnInit {
 
     onLoggedin() {
         this._authenticationService.login(this.model)
-            .then (
+            .subscribe (
                 res => {
-                  switch(res) {
+
+                  switch(this.model.user) {
                      case "admin": {
+                       localStorage.setItem('currentUser', 'admin');
                         this._router.navigate(['/admin/dashboard']);
                         break;
                      }
                      case "user": {
+                       localStorage.setItem('currentUser', 'user');
                         this._router.navigate(['/dashboard']);
                         break;
                      }
@@ -43,7 +50,7 @@ export class LoginComponent implements OnInit {
                      }
                   }
                 }, error => {
-                    console.log(error)
+                    this.login.show();
                 }
             )
     }

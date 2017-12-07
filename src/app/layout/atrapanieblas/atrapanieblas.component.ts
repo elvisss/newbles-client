@@ -20,6 +20,8 @@ export class AtrapanieblasComponent implements OnInit {
     public dispositivos:Dispositivo[] = [];
     public message:string = "";
 
+    public uap:string = "Universidad Alas Peruanas";
+
     @ViewChild('swal') private swal: SwalComponent;
 
     constructor(

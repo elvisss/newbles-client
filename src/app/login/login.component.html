@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4 push-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-            <h1>Newbles Actualizado</h1>
+            <h1>Newbles App</h1>
             <form (ngSubmit)="onLoggedin()" #addAtrapanieblaForm="ngForm">
                 <div class="form-content">
                     <div class="form-group" [class.has-danger]="user.invalid && add_submitted">
@@ -20,3 +20,11 @@
         </div>
     </div>
 </div>
+
+
+<swal 
+  #login
+  title="Error"
+  text="Usuario incorrecto"
+  type="error">
+</swal>

@@ -12,12 +12,12 @@
         <a routerLink="/estadistica" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i> Análisis Estadístico
         </a>
-        <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!-- <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i> Monitoreo de Agua
         </a>
         <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-wrench"></i> Consultar Tiempo
-        </a>
+        </a> -->
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <span><i class="fa fa-cogs"></i> Mantenimiento</span>
@@ -52,9 +52,9 @@
                 </ul>
             </li>
         </div>
-        <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!-- <a href="javascript:void(0)" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-th-list"></i> Cambiar Contraseña
-        </a>
+        </a> -->
     </ul>
     <ul class="list-group" *ngIf="isAdmin">
         <a routerLink="/admin/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">

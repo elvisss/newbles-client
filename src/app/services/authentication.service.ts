@@ -14,18 +14,10 @@ export class AuthenticationService {
     private _config: AppConfig
   ) { }
 
-  login(model: User): Promise<string> {
+  login(model: User): Observable<string> {
+    const headers = new Headers({ 'X-TOKEN': model.token });
 
-    if (model.user == 'admin') {
-      localStorage.setItem('currentUser', 'admin');
-    } else {
-      localStorage.setItem('currentUser', 'user');
-    }
-
-    return Promise.resolve(localStorage.getItem('currentUser'));
+    return this.apiService
+      .post<any>(this.apiService.endpoints.auth.login(), model, headers)
   }
-
-  // logout() {
-  //   return this.http.get(AppConfig.API_CALL_CENTER + 'session/close/', { headers: this._api.jwt() }).map((response: Response) => response.json());
-  // }
 }

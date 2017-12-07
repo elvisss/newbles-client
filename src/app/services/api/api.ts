@@ -29,6 +29,9 @@ export const endpoints = {
         todo: () => `/tipo_servomotor`,
         one: (idServoMotor: number) => `/tipo_servomotor/${idServoMotor}`,
     },
+    authentication: {
+        login: (model) => `/login/${model.user}`
+    },
     tanque: {
         todo: () => `/tipo_tanque`,
         one: (idTanque: number) => `/tipo_tanque/${idTanque}`,

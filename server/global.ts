@@ -2,7 +2,7 @@
     const uuid = require('uuid/v4');
 
     let _uuid = '';
-    const xIterationId = 'X-ITERATION-ID';
+    const xIterationId = 'X-TOKEN';
     const newUUID = () => {
         _uuid = uuid();
         return _uuid;

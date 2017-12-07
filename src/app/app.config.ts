@@ -14,6 +14,7 @@ export class AppConfig {
     if (environment.production) {
       return location.protocol + '//newbles.innsitec.com';
     } else {
+      // return 'http://192.168.0.16:6969';
       return 'http://localhost:6969';
       // return 'http://newbles.innsitec.com';
       // return 'http://localhost:8000';

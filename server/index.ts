@@ -30,8 +30,8 @@
         if (allowedOrigins.indexOf(origin) > -1) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         }
-        res.header('Access-Control-Allow-Headers', 'X-KEYBOARD, Content-type, X-TOKEN-KEYBOARD-ENCRYPTED-6-PIN, X-ITERATION-ID, X-CUSTOMER-CODE');
-        res.header('Access-Control-Expose-Headers', 'X-KEYBOARD, X-ITERATION-ID, X-CUSTOMER-CODE');
+        res.header('Access-Control-Allow-Headers', 'X-TOKEN, Content-type');
+        res.header('Access-Control-Expose-Headers', 'X-TOKEN');
         res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
         next();
     });

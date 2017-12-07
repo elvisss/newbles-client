@@ -9,12 +9,6 @@ import { AtrapanieblaService } from '../../services/atrapaniebla/atrapaniebla.se
     animations: [routerTransition()]
 })
 export class DashboardComponent implements OnInit {
-    // public alerts: Array<any> = [];
-    // public sliders: Array<any> = [];
-
-    // public title: string = 'My first AGM project';
-    // public lat: number = -12.078342;
-    // public lng: number = -76.922988;
 
     public markers:marker[] = [];
 
@@ -32,16 +26,7 @@ export class DashboardComponent implements OnInit {
           this.markers = res.data;
         })
     }
-
-    // public closeAlert(alert: any) {
-    //     const index: number = this.alerts.indexOf(alert);
-    //     this.alerts.splice(index, 1);
-    // }
-
-    // google maps zoom level
       zoom: number = 10;
-      
-      // initial center position for the map
       lat: number = -12.069907899999999;
       lng: number = -76.9366739;
       
